@@ -291,6 +291,7 @@ SELECT question_id, answer FROM meetme_progress WHERE status = 'answered';
 2. Read the template from `templates/profile-template.md` using the `view` tool.
 
 3. **Generate the profile.** Using the template structure and the user's answers, write a complete, polished Markdown profile. Follow these rules:
+   - **Start with Jekyll front matter:** `---\ntitle: "{Full Name}"\n---\n`
    - **Don't just paste answers** — expand them into natural, first-person prose
    - For multiple-choice answers, write 2–3 sentences that bring the choice to life with personality
    - Match the tone of the example profiles in `profiles/`

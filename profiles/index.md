@@ -1,0 +1,18 @@
+---
+title: Team Directory
+permalink: /profiles/
+---
+
+# 🪪 MeetMe Team Directory
+
+> Browse profiles to learn how your teammates work best.
+
+| Name | Role | Team | Profile |
+|------|------|------|---------|
+| Jane Doe | Senior Product Manager | Platform Team | [View Profile](jane-doe) |
+| Marcus Chen | Staff Software Engineer | Infrastructure Team | [View Profile](marcus-chen) |
+| Sofia Rivera | UX Designer | Growth Team | [View Profile](sofia-rivera) |
+
+---
+
+*Run `@meetme` in Copilot CLI to add yours!*

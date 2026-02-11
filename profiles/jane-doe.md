@@ -1,3 +1,7 @@
+---
+title: "Jane Doe"
+---
+
 # 🪪 MeetMe: Jane Doe
 
 > *Senior Product Manager · Platform Team · 🧩 Runs on oat milk lattes*

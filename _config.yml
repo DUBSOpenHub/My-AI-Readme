@@ -1,0 +1,18 @@
+title: MeetMe 🪪
+description: "How to Work With Me" — AI-powered team profiles
+theme: minima
+baseurl: ""
+
+header_pages:
+  - profiles/index.md
+  - ONBOARDING.md
+
+defaults:
+  - scope:
+      path: "profiles"
+    values:
+      layout: default
+  - scope:
+      path: ""
+    values:
+      layout: default

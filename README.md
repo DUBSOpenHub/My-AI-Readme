@@ -44,6 +44,14 @@ git push
 
 Check out the [team directory](profiles/README.md) to see everyone's profiles.
 
+### 🌐 GitHub Pages
+
+This repo is GitHub Pages-ready. To enable the web directory:
+
+1. Go to **Settings → Pages** in your GitHub repo
+2. Set source to **Deploy from a branch → `main` / `/ (root)`**
+3. Your team directory will be live at `https://yourorg.github.io/meetme/profiles/`
+
 ## 🤔 FAQ
 
 **Q: How long does it take?**

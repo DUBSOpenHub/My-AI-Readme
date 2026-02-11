@@ -1,3 +1,7 @@
+---
+title: "Sofia Rivera"
+---
+
 # 🪪 MeetMe: Sofia Rivera
 
 > *UX Designer · Growth Team · 🎨 Powered by matcha and playlists*
