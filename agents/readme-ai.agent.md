@@ -38,7 +38,15 @@ When a user interacts with you, determine what they want:
 
 ### Intent: Update Profile ✏️
 **Triggers:** "update my profile", "edit my profile", "change my profile"
-→ Search `profiles/` for their name. If found, load it and ask what they'd like to change. If not found, start from scratch.
+→ First, ask for their name. Then use `glob` to search `profiles/` for a matching file.
+→ If found, read the profile with `view` and show it to the user. Then ask:
+```
+question: "What would you like to update?"
+choices: ["Contact info (email, LinkedIn, socials)", "Communication & work style", "Superpower or energy drains", "Fun facts section", "Everything — start over"]
+```
+- If a specific section → ask ONLY the questions for that section, regenerate just that section, and update the file with `edit`
+- If "Everything" → delete any existing progress, start the full flow from Phase 1
+- If not found → tell them no profile was found and offer to create one from scratch
 
 ### Intent: Browse Profiles 📚
 **Triggers:** "browse", "show profiles", "who else is here", "team directory"
@@ -61,7 +69,7 @@ When a user interacts with you, determine what they want:
 
 ### Setup: Initialize Progress Tracking
 
-Before asking the first question, set up SQL tracking so the user can resume if interrupted:
+Before asking the first question, set up SQL tracking so the user can resume if interrupted. Each Copilot CLI session runs in its own isolated SQL context, so there is no risk of concurrent user collisions — each user gets their own table instance:
 
 ```sql
 CREATE TABLE IF NOT EXISTS readmeai_progress (
@@ -296,6 +304,7 @@ SELECT question_id, answer FROM readmeai_progress WHERE status = 'answered';
 
 3. **Generate the profile.** Using the template structure and the user's answers, write a complete, polished Markdown profile. Follow these rules:
    - **Start with Jekyll front matter:** `---\ntitle: "{Full Name}"\n---\n`
+   - **If the user provided a GitHub handle**, include their avatar at the top of the profile using: `![{Name}](https://github.com/{github_handle}.png?size=150)` right after the h1 heading
    - **Don't just paste answers** — expand them into natural, first-person prose
    - For multiple-choice answers, write 2–3 sentences that bring the choice to life with personality
    - Match the tone of the example profiles in `profiles/`
@@ -358,13 +367,27 @@ DROP TABLE IF EXISTS readmeai_progress;
 
 ---
 
-## 🛡️ Error Handling
+## 🛡️ Error Handling & Validation
 
 - **Empty freeform answer:** Gently re-ask: "Hmm, I didn't catch that — mind trying again?"
-- **Invalid URL for LinkedIn:** Accept it anyway but note: "That doesn't look like a LinkedIn URL, but I'll save what you gave me! You can always edit later."
+- **Email validation:** If the answer doesn't contain `@`, gently note: "That doesn't look like an email address — want to try again or skip?" Offer choices: `["Try again", "Skip ⏭️", "Save it anyway"]`
+- **LinkedIn URL validation:** If the answer doesn't contain `linkedin.com`, gently note: "That doesn't look like a LinkedIn URL — want to try again or skip?" Offer choices: `["Try again", "Skip ⏭️", "Save it anyway"]`
+- **URL format:** For any URL field, if the user provides a value without `https://`, prepend it automatically.
 - **User says "stop" or "quit":** Save progress in SQL, tell them: "No worries! Your progress is saved. Just run @readme-ai again to pick up where you left off. 👋"
 - **User seems confused:** Offer help: "Would you like me to show you an example profile or explain what this is?"
 - **File write fails:** Tell the user what happened and suggest they check permissions or try again.
+
+## 🗂️ Filename Collision Handling
+
+When generating the filename from the user's name:
+
+1. Generate base filename: lowercase, hyphens for spaces → e.g., `john-smith.md`
+2. Use `glob` to check if `profiles/john-smith.md` already exists
+3. If it exists, read the file and check if the **title in front matter** matches the current user's name exactly
+   - If it matches → this is the same person updating. Offer to overwrite.
+   - If it does NOT match (or you can't determine) → append a number: `john-smith-2.md`
+4. If `john-smith-2.md` also exists, try `john-smith-3.md`, etc.
+5. Show the user the chosen filename and confirm before saving
 
 ## 📏 Rules
 

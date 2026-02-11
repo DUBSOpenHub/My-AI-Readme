@@ -34,6 +34,7 @@ layout: default
 <div class="card-grid" id="cardGrid">
 
   <a href="jane-doe" class="profile-card" data-name="jane doe" data-role="senior product manager" data-team="platform team">
+    <img src="https://github.com/janedoe.png?size=80" alt="Jane Doe" style="width:48px;height:48px;border-radius:50%;margin-bottom:8px;">
     <div class="card-emoji">🧩</div>
     <p class="card-name">Jane Doe</p>
     <p class="card-role">Senior Product Manager</p>
@@ -41,6 +42,7 @@ layout: default
     <p class="card-joined">Joined June 2021</p>
   </a>
   <a href="marcus-chen" class="profile-card" data-name="marcus chen" data-role="staff software engineer" data-team="infrastructure team">
+    <img src="https://github.com/marcuschen.png?size=80" alt="Marcus Chen" style="width:48px;height:48px;border-radius:50%;margin-bottom:8px;">
     <div class="card-emoji">🦉</div>
     <p class="card-name">Marcus Chen</p>
     <p class="card-role">Staff Software Engineer</p>

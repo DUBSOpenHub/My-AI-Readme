@@ -82,6 +82,17 @@ jobs:
             [ -z "$emoji" ] && emoji="🤖"
             [ -z "$name" ] && continue
 
+            # Sanitize HTML — strip tags and escape quotes to prevent injection
+            sanitize() { echo "$1" | sed 's/<[^>]*>//g; s/"/\&quot;/g; s/'"'"'/\&#39;/g'; }
+            name=$(sanitize "$name")
+            role=$(sanitize "$role")
+            team=$(sanitize "$team")
+            joined=$(sanitize "$joined")
+            emoji=$(sanitize "$emoji")
+
+            # Extract GitHub handle for avatar
+            github_handle=$(grep -m1 "| \*\*GitHub\*\*" "$file" | sed 's/.*\[@\([^]]*\)\].*/\1/')
+
             # Add to README.md table
             echo "| ${name} | ${role} | ${team} | [View Profile](${basename}.md) |" >> profiles/README.md
 
@@ -89,12 +100,16 @@ jobs:
             joined_html=""
             [ -n "$joined" ] && joined_html="<p class=\"card-joined\">Joined ${joined}</p>"
 
+            avatar_html=""
+            [ -n "$github_handle" ] && avatar_html="<img src=\"https://github.com/${github_handle}.png?size=80\" alt=\"${name}\" style=\"width:48px;height:48px;border-radius:50%;margin-bottom:8px;\">"
+
             name_lower=$(echo "$name" | tr '[:upper:]' '[:lower:]')
             role_lower=$(echo "$role" | tr '[:upper:]' '[:lower:]')
             team_lower=$(echo "$team" | tr '[:upper:]' '[:lower:]')
 
             CARDS="${CARDS}
             <a href=\"${basename}\" class=\"profile-card\" data-name=\"${name_lower}\" data-role=\"${role_lower}\" data-team=\"${team_lower}\">
+              ${avatar_html}
               <div class=\"card-emoji\">${emoji}</div>
               <p class=\"card-name\">${name}</p>
               <p class=\"card-role\">${role}</p>
@@ -134,19 +149,46 @@ jobs:
             var noResults = document.getElementById('noResults');
             var countEl = document.getElementById('searchCount');
             var total = cards.length;
+            var PAGE_SIZE = 50;
+            var showAll = false;
+
             function update() {
               var q = search.value.toLowerCase().trim();
               var visible = 0;
+              var hidden = 0;
               cards.forEach(function(card) {
                 var text = card.dataset.name + ' ' + card.dataset.role + ' ' + card.dataset.team;
                 var match = !q || text.indexOf(q) !== -1;
-                card.style.display = match ? '' : 'none';
-                if (match) visible++;
+                if (match) {
+                  visible++;
+                  // Paginate: only show first PAGE_SIZE unless searching or showAll
+                  card.style.display = (q || showAll || visible <= PAGE_SIZE) ? '' : 'none';
+                  if (!q && !showAll && visible > PAGE_SIZE) hidden++;
+                } else {
+                  card.style.display = 'none';
+                }
               });
               noResults.classList.toggle('visible', visible === 0);
-              countEl.textContent = q ? visible + ' of ' + total + ' profiles' : total + ' profiles';
+              var msg = q ? visible + ' of ' + total + ' profiles' : total + ' profiles';
+              if (!q && !showAll && hidden > 0) msg += ' (showing first ' + PAGE_SIZE + ')';
+              countEl.textContent = msg;
+
+              // Show/hide "Show All" button
+              var btn = document.getElementById('showAllBtn');
+              if (!q && !showAll && hidden > 0) {
+                if (!btn) {
+                  btn = document.createElement('button');
+                  btn.id = 'showAllBtn';
+                  btn.textContent = 'Show all ' + total + ' profiles';
+                  btn.style.cssText = 'margin:16px auto;display:block;padding:10px 24px;border:1px solid #d0d7de;border-radius:8px;background:#fff;cursor:pointer;font-size:14px;';
+                  btn.onclick = function() { showAll = true; update(); };
+                  grid.parentNode.insertBefore(btn, grid.nextSibling);
+                }
+              } else if (btn) {
+                btn.remove();
+              }
             }
-            search.addEventListener('input', update);
+            search.addEventListener('input', function() { showAll = false; update(); });
             update();
           })();
           </script>
