@@ -20,7 +20,7 @@ A beautiful Markdown profile that tells your teammates:
 
 ### Step 1: Clone this repo
 ```bash
-git clone https://github.com/yourorg/readme-ai.git
+git clone https://github.com/DUBSOpenHub/readme-ai.git
 cd readme-ai
 ```
 
@@ -50,7 +50,7 @@ This repo is GitHub Pages-ready. To enable the web directory:
 
 1. Go to **Settings → Pages** in your GitHub repo
 2. Set source to **Deploy from a branch → `main` / `/ (root)`**
-3. Your team directory will be live at `https://yourorg.github.io/readme-ai/profiles/`
+3. Your team directory will be live at `https://DUBSOpenHub.github.io/readme-ai/profiles/`
 
 ## 🤔 FAQ
 

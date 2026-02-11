@@ -1,7 +1,8 @@
 title: README.ai 🤖
 description: "How to Work With Me" — AI-powered team profiles
 theme: minima
-baseurl: ""
+baseurl: "/readme-ai"
+permalink: pretty
 
 header_pages:
   - profiles/index.md

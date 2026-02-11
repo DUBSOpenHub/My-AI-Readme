@@ -2,7 +2,7 @@
 title: "Sofia Rivera"
 ---
 
-# 🤖 MeetMe: Sofia Rivera
+# 🤖 README.ai: Sofia Rivera
 
 > *UX Designer · Growth Team · 🎨 Powered by matcha and playlists*
 
@@ -38,4 +38,4 @@ Unnecessary meetings where nothing gets decided. If there's no agenda and no out
 - **Fuel:** Iced matcha latte + a curated Spotify playlist (genre depends on the mood of the sprint)
 
 ---
-*Generated with [README.ai](https://github.com/yourorg/readme-ai) 🤖*
+*Generated with [README.ai](https://github.com/DUBSOpenHub/readme-ai) 🤖*

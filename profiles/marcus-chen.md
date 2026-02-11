@@ -2,7 +2,7 @@
 title: "Marcus Chen"
 ---
 
-# 🤖 MeetMe: Marcus Chen
+# 🤖 README.ai: Marcus Chen
 
 > *Staff Software Engineer · Infrastructure Team · 🦉 Fueled by cold brew*
 
@@ -39,4 +39,4 @@ Context switching. If I'm deep in a problem and get pulled into an unrelated mee
 - **Fuel:** Cold brew, black, in a comically large thermos
 
 ---
-*Generated with [README.ai](https://github.com/yourorg/readme-ai) 🤖*
+*Generated with [README.ai](https://github.com/DUBSOpenHub/readme-ai) 🤖*

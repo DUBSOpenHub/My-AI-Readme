@@ -2,7 +2,7 @@
 title: "Jane Doe"
 ---
 
-# 🤖 MeetMe: Jane Doe
+# 🤖 README.ai: Jane Doe
 
 > *Senior Product Manager · Platform Team · 🧩 Runs on oat milk lattes*
 
@@ -38,4 +38,4 @@ Ambiguity without a path forward. I can handle uncertainty — that's half of pr
 - **Fuel:** Oat milk latte, no exceptions. Don't talk to me before the first one.
 
 ---
-*Generated with [README.ai](https://github.com/yourorg/readme-ai) 🤖*
+*Generated with [README.ai](https://github.com/DUBSOpenHub/readme-ai) 🤖*

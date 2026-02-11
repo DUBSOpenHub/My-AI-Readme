@@ -25,7 +25,7 @@ gh auth login
 ## Step 2: Clone This Repo
 
 ```bash
-git clone https://github.com/yourorg/readme-ai.git
+git clone https://github.com/DUBSOpenHub/readme-ai.git
 cd readme-ai
 ```
 

@@ -104,7 +104,7 @@ This is the most valuable section for teammates — it tells them what to avoid.
 Always end with:
 ```markdown
 ---
-*Generated with [README.ai](https://github.com/yourorg/readme-ai) 🤖*
+*Generated with [README.ai](https://github.com/DUBSOpenHub/readme-ai) 🤖*
 ```
 
 ---

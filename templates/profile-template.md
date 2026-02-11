@@ -1,4 +1,4 @@
-# 🤖 MeetMe: {{NAME}}
+# 🤖 README.ai: {{NAME}}
 
 > *{{ROLE}} · {{TEAM}} · {{SPIRIT_EMOJI}} {{SNACK_DRINK}}*
 
@@ -12,8 +12,8 @@
 {{/START_DATE}}{{#EMAIL}}| **Email** | {{EMAIL}} |
 {{/EMAIL}}{{#LINKEDIN}}| **LinkedIn** | [{{LINKEDIN_DISPLAY}}]({{LINKEDIN}}) |
 {{/LINKEDIN}}{{#GITHUB}}| **GitHub** | [@{{GITHUB}}](https://github.com/{{GITHUB}}) |
-{{/GITHUB}}{{#SOCIAL}}| **Social** | {{SOCIAL}} |
-{{/SOCIAL}}| **Timezone** | {{TIMEZONE}} |
+{{/GITHUB}}{{#SOCIAL_ENTRIES}}| **{{PLATFORM}}** | {{HANDLE}} |
+{{/SOCIAL_ENTRIES}}| **Timezone** | {{TIMEZONE}} |
 
 ## 💬 How to Work With Me
 
@@ -35,4 +35,4 @@
 - **Fuel:** {{SNACK_DRINK}}
 
 ---
-*Generated with [README.ai](https://github.com/yourorg/readme-ai) 🤖*
+*Generated with [README.ai](https://github.com/DUBSOpenHub/readme-ai) 🤖*

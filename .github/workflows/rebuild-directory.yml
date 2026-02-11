@@ -1,0 +1,161 @@
+name: Rebuild Profile Directory
+
+on:
+  push:
+    paths:
+      - 'profiles/*.md'
+      - '!profiles/README.md'
+      - '!profiles/index.md'
+
+jobs:
+  rebuild-index:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rebuild profiles/README.md and profiles/index.md
+        run: |
+          echo "# 🤖 README.ai Team Directory" > profiles/README.md
+          echo "" >> profiles/README.md
+          echo "> Browse profiles to learn how your teammates work best." >> profiles/README.md
+          echo "" >> profiles/README.md
+          echo "| Name | Role | Team | Profile |" >> profiles/README.md
+          echo "|------|------|------|---------|" >> profiles/README.md
+
+          # Start building index.md (keep everything before the card-grid div content)
+          cat > /tmp/index_header.html << 'HEADER_EOF'
+          ---
+          title: Team Directory
+          permalink: /profiles/
+          layout: default
+          ---
+
+          <style>
+          .search-container { margin: 1.5rem 0; }
+          .search-input { width: 100%; max-width: 480px; padding: 12px 16px 12px 44px; font-size: 16px; border: 2px solid #d0d7de; border-radius: 12px; outline: none; transition: border-color 0.2s; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='%23656d76' viewBox='0 0 16 16'%3E%3Cpath d='M11.5 7a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm-.82 4.74a6 6 0 1 1 1.06-1.06l3.04 3.04a.75.75 0 1 1-1.06 1.06l-3.04-3.04Z'/%3E%3C/svg%3E") 14px center no-repeat; }
+          .search-input:focus { border-color: #0969da; box-shadow: 0 0 0 3px rgba(9,105,218,0.15); }
+          .search-count { margin-top: 8px; font-size: 14px; color: #656d76; }
+          .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-top: 1.5rem; }
+          .profile-card { border: 1px solid #d0d7de; border-radius: 12px; padding: 20px; transition: box-shadow 0.2s, transform 0.15s; background: #fff; text-decoration: none; color: inherit; display: block; }
+          .profile-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateY(-2px); text-decoration: none; color: inherit; }
+          .card-emoji { font-size: 32px; margin-bottom: 8px; }
+          .card-name { font-size: 18px; font-weight: 600; margin: 0 0 4px 0; color: #1f2328; }
+          .card-role { font-size: 14px; color: #656d76; margin: 0 0 8px 0; }
+          .card-team { display: inline-block; font-size: 12px; padding: 2px 10px; border-radius: 20px; background: #ddf4ff; color: #0969da; font-weight: 500; }
+          .card-joined { font-size: 12px; color: #8b949e; margin-top: 10px; }
+          .no-results { display: none; text-align: center; padding: 3rem 1rem; color: #656d76; font-size: 16px; }
+          .no-results.visible { display: block; }
+          .cta-banner { margin-top: 2rem; padding: 16px 20px; border-radius: 12px; background: linear-gradient(135deg, #f0f7ff, #e8f0fe); border: 1px solid #c8d8ea; text-align: center; font-size: 15px; color: #1f2328; }
+          .cta-banner code { background: #fff; padding: 2px 8px; border-radius: 6px; font-weight: 600; }
+          </style>
+
+          <h1>🤖 README.ai Team Directory</h1>
+          <p><em>Browse profiles to learn how your teammates work best.</em></p>
+
+          <div class="search-container">
+            <input type="text" class="search-input" id="profileSearch" placeholder="Search by name, role, or team..." autocomplete="off" aria-label="Search profiles">
+            <div class="search-count" id="searchCount" aria-live="polite"></div>
+          </div>
+
+          <div class="card-grid" id="cardGrid">
+          HEADER_EOF
+
+          CARDS=""
+
+          for file in profiles/*.md; do
+            basename=$(basename "$file" .md)
+            [ "$basename" = "README" ] && continue
+            [ "$basename" = "index" ] && continue
+
+            # Extract info from front matter and content
+            name=$(grep -m1 "^title:" "$file" | sed 's/^title: *"\{0,1\}\(.*\)"\{0,1\}$/\1/' | sed 's/"//g')
+            [ -z "$name" ] && name=$(grep -m1 "^# " "$file" | sed 's/^# 🤖 README.ai: //')
+
+            role=$(grep -m1 "| \*\*Role\*\*" "$file" | sed 's/.*| \*\*Role\*\* | \(.*\) |/\1/')
+            team=$(grep -m1 "| \*\*Team\*\*" "$file" | sed 's/.*| \*\*Team\*\* | \(.*\) |/\1/')
+            joined=$(grep -m1 "| \*\*Joined\*\*" "$file" | sed 's/.*| \*\*Joined\*\* | \(.*\) |/\1/')
+            emoji=$(grep -m1 "\*\*Spirit emoji:\*\*" "$file" | sed 's/.*\*\*Spirit emoji:\*\* //')
+
+            [ -z "$emoji" ] && emoji="🤖"
+            [ -z "$name" ] && continue
+
+            # Add to README.md table
+            echo "| ${name} | ${role} | ${team} | [View Profile](${basename}.md) |" >> profiles/README.md
+
+            # Build card HTML
+            joined_html=""
+            [ -n "$joined" ] && joined_html="<p class=\"card-joined\">Joined ${joined}</p>"
+
+            name_lower=$(echo "$name" | tr '[:upper:]' '[:lower:]')
+            role_lower=$(echo "$role" | tr '[:upper:]' '[:lower:]')
+            team_lower=$(echo "$team" | tr '[:upper:]' '[:lower:]')
+
+            CARDS="${CARDS}
+            <a href=\"${basename}\" class=\"profile-card\" data-name=\"${name_lower}\" data-role=\"${role_lower}\" data-team=\"${team_lower}\">
+              <div class=\"card-emoji\">${emoji}</div>
+              <p class=\"card-name\">${name}</p>
+              <p class=\"card-role\">${role}</p>
+              <span class=\"card-team\">${team}</span>
+              ${joined_html}
+            </a>"
+          done
+
+          # Finish README.md
+          echo "" >> profiles/README.md
+          echo "---" >> profiles/README.md
+          echo "" >> profiles/README.md
+          echo "*This directory is auto-generated. Run \`@readme-ai\` to add yours!*" >> profiles/README.md
+
+          # Build complete index.md
+          cat /tmp/index_header.html > profiles/index.md
+          echo "$CARDS" >> profiles/index.md
+
+          cat >> profiles/index.md << 'FOOTER_EOF'
+
+          </div>
+
+          <div class="no-results" id="noResults">
+            🔍 No profiles match your search.<br>
+            Try a different name, role, or team.
+          </div>
+
+          <div class="cta-banner">
+            🤖 Don't see yourself? Run <code>@readme-ai</code> in Copilot CLI to create your profile!
+          </div>
+
+          <script>
+          (function() {
+            var search = document.getElementById('profileSearch');
+            var grid = document.getElementById('cardGrid');
+            var cards = Array.from(grid.querySelectorAll('.profile-card'));
+            var noResults = document.getElementById('noResults');
+            var countEl = document.getElementById('searchCount');
+            var total = cards.length;
+            function update() {
+              var q = search.value.toLowerCase().trim();
+              var visible = 0;
+              cards.forEach(function(card) {
+                var text = card.dataset.name + ' ' + card.dataset.role + ' ' + card.dataset.team;
+                var match = !q || text.indexOf(q) !== -1;
+                card.style.display = match ? '' : 'none';
+                if (match) visible++;
+              });
+              noResults.classList.toggle('visible', visible === 0);
+              countEl.textContent = q ? visible + ' of ' + total + ' profiles' : total + ' profiles';
+            }
+            search.addEventListener('input', update);
+            update();
+          })();
+          </script>
+          FOOTER_EOF
+
+      - name: Commit updated directory
+        run: |
+          git config user.name "README.ai Bot"
+          git config user.email "readme-ai[bot]@users.noreply.github.com"
+          git add profiles/README.md profiles/index.md
+          git diff --cached --quiet || git commit -m "🤖 Auto-rebuild profile directory"
+          git push
