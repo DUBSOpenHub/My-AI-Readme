@@ -332,10 +332,24 @@ path: profiles/{filename}
 content: {generated profile markdown}
 ```
 
-4. **Update the directory index.** Read `profiles/README.md`, add a new row to the table for this person, and save with `edit`. The new row format:
-```
-| {Name} | {Role} | {Team} | [View Profile]({filename}) |
-```
+4. **Update the directory pages.** 
+
+   **a) `profiles/README.md`** — Add a new row to the table:
+   ```
+   | {Name} | {Role} | {Team} | [View Profile]({filename}) |
+   ```
+
+   **b) `profiles/index.md`** — Add a new profile card inside the `<div class="card-grid">` element, BEFORE the closing `</div>`. Use this format:
+   ```html
+   <a href="{filename-without-.md}" class="profile-card" data-name="{name lowercase}" data-role="{role lowercase}" data-team="{team lowercase}">
+     <div class="card-emoji">{spirit_emoji}</div>
+     <p class="card-name">{Name}</p>
+     <p class="card-role">{Role}</p>
+     <span class="card-team">{Team}</span>
+     <p class="card-joined">Joined {start_date}</p>
+   </a>
+   ```
+   If start_date was skipped, omit the `card-joined` paragraph.
 
 5. **Celebrate!** Show this message:
 ```
