@@ -2,12 +2,18 @@
 
 > *{{ROLE}} · {{TEAM}} · {{SPIRIT_EMOJI}} {{SNACK_DRINK}}*
 
-## 📬 Connect
+## 📬 About
 | | |
 |---|---|
-{{#EMAIL}}| **Email** | {{EMAIL}} |
+| **Name** | {{NAME}} |
+| **Role** | {{ROLE}} |
+| **Team** | {{TEAM}} |
+{{#START_DATE}}| **Joined** | {{START_DATE}} |
+{{/START_DATE}}{{#EMAIL}}| **Email** | {{EMAIL}} |
 {{/EMAIL}}{{#LINKEDIN}}| **LinkedIn** | [{{LINKEDIN_DISPLAY}}]({{LINKEDIN}}) |
-{{/LINKEDIN}}| **Timezone** | {{TIMEZONE}} |
+{{/LINKEDIN}}{{#GITHUB}}| **GitHub** | [@{{GITHUB}}](https://github.com/{{GITHUB}}) |
+{{/GITHUB}}{{#SOCIAL}}| **Social** | {{SOCIAL}} |
+{{/SOCIAL}}| **Timezone** | {{TIMEZONE}} |
 
 ## 💬 How to Work With Me
 

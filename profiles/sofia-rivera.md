@@ -2,11 +2,16 @@
 
 > *UX Designer · Growth Team · 🎨 Powered by matcha and playlists*
 
-## 📬 Connect
+## 📬 About
 | | |
 |---|---|
+| **Name** | Sofia Rivera |
+| **Role** | UX Designer |
+| **Team** | Growth Team |
+| **Joined** | March 2023 |
 | **Email** | sofia.rivera@company.com |
 | **LinkedIn** | [linkedin.com/in/sofiarivera](https://linkedin.com/in/sofiarivera) |
+| **Dribbble** | [dribbble.com/sofiarivera](https://dribbble.com/sofiarivera) |
 | **Timezone** | CST (9am–5pm) |
 
 ## 💬 How to Work With Me

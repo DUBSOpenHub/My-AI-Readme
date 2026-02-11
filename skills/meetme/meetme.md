@@ -17,21 +17,31 @@ The subheader should be a single italicized line that captures role, team, and a
 - `> *Staff Software Engineer · Infrastructure Team · 🦉 Fueled by cold brew*`
 - `> *UX Designer · Growth Team · 🎨 Powered by matcha and playlists*`
 
-### Section 2: Connect Table
-**Format:** Clean Markdown table with only the fields the user provided.
+### Section 2: About Table
+**Format:** Clean Markdown table with name, role, team prominently shown, plus optional fields.
 
 ```markdown
-## 📬 Connect
+## 📬 About
 | | |
 |---|---|
-| **Email** | user@company.com |
-| **LinkedIn** | [linkedin.com/in/handle](https://linkedin.com/in/handle) |
+| **Name** | Jane Doe |
+| **Role** | Senior Product Manager |
+| **Team** | Platform Team |
+| **Joined** | June 2021 |
+| **Email** | jane@company.com |
+| **LinkedIn** | [linkedin.com/in/janedoe](https://linkedin.com/in/janedoe) |
+| **GitHub** | [@janedoe](https://github.com/janedoe) |
+| **Twitter/X** | [@janedoe](https://twitter.com/janedoe) |
 | **Timezone** | PST (10am–6pm) |
 ```
 
 **Rules:**
+- Name, Role, and Team are ALWAYS shown at the top of the table
 - OMIT rows for skipped fields — no empty cells or "N/A"
+- Start date displayed as "Joined" with the value the user gave (e.g., "March 2022")
 - LinkedIn should be displayed as a short readable URL, linked to the full URL
+- GitHub should be displayed as @username, linked to their profile
+- Social handles: parse what the user provides and format each on its own row with the platform name as the label
 - Timezone is always included (it's a required field)
 
 ### Section 3: How to Work With Me
@@ -106,8 +116,20 @@ Always end with:
 | 1 | name | basics | freeform | ✅ |
 | 2 | role | basics | freeform | ✅ |
 | 3 | team | basics | freeform | ✅ |
-| 4 | linkedin | basics | freeform | ❌ |
+| 4 | start_date | basics | freeform | ❌ |
 | 5 | email | basics | freeform | ❌ |
+| 6 | linkedin | basics | freeform | ❌ |
+| 7 | github_handle | basics | freeform | ❌ |
+| 8 | social_handles | basics | freeform | ❌ |
+| 9 | communication | work_style | choice | ✅ |
+| 10 | productivity | work_style | choice | ✅ |
+| 11 | feedback | work_style | choice | ✅ |
+| 12 | superpower | work_style | choice+free | ✅ |
+| 13 | drains | work_style | choice+free | ✅ |
+| 14 | timezone | work_style | freeform | ✅ |
+| 15 | fun_fact | fun | freeform | ✅ |
+| 16 | spirit_emoji | fun | choice+free | ✅ |
+| 17 | snack_drink | fun | freeform | ✅ |
 | 6 | communication | work_style | choice | ✅ |
 | 7 | productivity | work_style | choice | ✅ |
 | 8 | feedback | work_style | choice | ✅ |

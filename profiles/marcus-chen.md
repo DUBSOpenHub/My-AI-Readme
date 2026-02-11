@@ -2,11 +2,17 @@
 
 > *Staff Software Engineer · Infrastructure Team · 🦉 Fueled by cold brew*
 
-## 📬 Connect
+## 📬 About
 | | |
 |---|---|
+| **Name** | Marcus Chen |
+| **Role** | Staff Software Engineer |
+| **Team** | Infrastructure Team |
+| **Joined** | January 2020 |
 | **Email** | marcus.chen@company.com |
 | **LinkedIn** | [linkedin.com/in/marcuschen](https://linkedin.com/in/marcuschen) |
+| **GitHub** | [@marcuschen](https://github.com/marcuschen) |
+| **Twitter/X** | [@marcuscodes](https://twitter.com/marcuscodes) |
 | **Timezone** | EST (11am–7pm) |
 
 ## 💬 How to Work With Me

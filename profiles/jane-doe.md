@@ -2,11 +2,16 @@
 
 > *Senior Product Manager · Platform Team · 🧩 Runs on oat milk lattes*
 
-## 📬 Connect
+## 📬 About
 | | |
 |---|---|
+| **Name** | Jane Doe |
+| **Role** | Senior Product Manager |
+| **Team** | Platform Team |
+| **Joined** | June 2021 |
 | **Email** | jane.doe@company.com |
 | **LinkedIn** | [linkedin.com/in/janedoe](https://linkedin.com/in/janedoe) |
+| **GitHub** | [@janedoe](https://github.com/janedoe) |
 | **Timezone** | PST (10am–6pm) |
 
 ## 💬 How to Work With Me
