@@ -1,4 +1,4 @@
-# 🪪 MeetMe: {{NAME}}
+# 🤖 MeetMe: {{NAME}}
 
 > *{{ROLE}} · {{TEAM}} · {{SPIRIT_EMOJI}} {{SNACK_DRINK}}*
 
@@ -35,4 +35,4 @@
 - **Fuel:** {{SNACK_DRINK}}
 
 ---
-*Generated with [MeetMe](https://github.com/yourorg/meetme) 🪪*
+*Generated with [README.ai](https://github.com/yourorg/readme-ai) 🤖*

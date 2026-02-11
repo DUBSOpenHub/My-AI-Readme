@@ -1,6 +1,6 @@
-# Contributing to MeetMe 🪪
+# Contributing to README.ai 🤖
 
-Thanks for your interest in making MeetMe better! Here's how to help.
+Thanks for your interest in making README.ai better! Here's how to help.
 
 ## 🐛 Found a Bug?
 
@@ -15,12 +15,12 @@ Open an issue with the `enhancement` label. We love ideas for new profile questi
 1. Fork the repo
 2. Create a branch: `git checkout -b my-improvement`
 3. Make your changes
-4. Test by running `@meetme` yourself
+4. Test by running `@readme-ai` yourself
 5. Open a PR with a clear description
 
 ## 📏 Guidelines
 
-- **Agent changes** (`agents/meetme.agent.md`): Test the full profile flow end-to-end
+- **Agent changes** (`agents/readme-ai.agent.md`): Test the full profile flow end-to-end
 - **Template changes** (`templates/`): Regenerate an example profile to verify formatting
 - **Profile changes**: Don't modify other people's profiles without their consent
 - Keep the tone fun, inclusive, and welcoming

@@ -1,13 +1,13 @@
-# MeetMe Skill — Profile Generation Reference
+# README.ai Skill — Profile Generation Reference
 
-This skill provides the MeetMe agent with reference material for generating high-quality profiles.
+This skill provides the README.ai agent with reference material for generating high-quality profiles.
 
 ---
 
 ## Profile Sections Reference
 
 ### Section 1: Header
-**Format:** `# 🪪 MeetMe: {Full Name}`
+**Format:** `# 🤖 README.ai: {Full Name}`
 **Subheader:** `> *{Role} · {Team} · {Spirit Emoji} {Snack/Drink detail}*`
 
 The subheader should be a single italicized line that captures role, team, and a personality hint. Use the spirit emoji and snack/drink to add flavor.
@@ -104,7 +104,7 @@ This is the most valuable section for teammates — it tells them what to avoid.
 Always end with:
 ```markdown
 ---
-*Generated with [MeetMe](https://github.com/yourorg/meetme) 🪪*
+*Generated with [README.ai](https://github.com/yourorg/readme-ai) 🤖*
 ```
 
 ---
@@ -130,15 +130,6 @@ Always end with:
 | 15 | fun_fact | fun | freeform | ✅ |
 | 16 | spirit_emoji | fun | choice+free | ✅ |
 | 17 | snack_drink | fun | freeform | ✅ |
-| 6 | communication | work_style | choice | ✅ |
-| 7 | productivity | work_style | choice | ✅ |
-| 8 | feedback | work_style | choice | ✅ |
-| 9 | superpower | work_style | choice+free | ✅ |
-| 10 | drains | work_style | choice+free | ✅ |
-| 11 | timezone | work_style | freeform | ✅ |
-| 12 | fun_fact | fun | freeform | ✅ |
-| 13 | spirit_emoji | fun | choice+free | ✅ |
-| 14 | snack_drink | fun | freeform | ✅ |
 
 ---
 

@@ -3,7 +3,7 @@ title: Team Directory
 permalink: /profiles/
 ---
 
-# 🪪 MeetMe Team Directory
+# 🤖 README.ai Team Directory
 
 > Browse profiles to learn how your teammates work best.
 
@@ -15,4 +15,4 @@ permalink: /profiles/
 
 ---
 
-*Run `@meetme` in Copilot CLI to add yours!*
+*Run `@readme-ai` in Copilot CLI to add yours!*
