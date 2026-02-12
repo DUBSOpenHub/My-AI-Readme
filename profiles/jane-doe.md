@@ -11,6 +11,7 @@ title: "Jane Doe"
 |---|---|
 | **Name** | Jane Doe |
 | **Role** | Senior Product Manager |
+| **Business Unit** | Product |
 | **Team** | Platform Team |
 | **Joined** | June 2021 |
 | **Email** | jane.doe@company.com |
@@ -38,4 +39,4 @@ Ambiguity without a path forward. I can handle uncertainty — that's half of pr
 - **Fuel:** Oat milk latte, no exceptions. Don't talk to me before the first one.
 
 ---
-*Generated with [My AI README](https://github.com/DUBSOpenHub/MyAIReadme) 🤖*
+*Generated with [My AI README](https://github.com/DUBSOpenHub/My-AI-Readme) 🤖*

@@ -402,7 +402,7 @@ When generating the filename from the user's name:
 
 1. ALWAYS use `ask_user` for questions — never ask in plain text
 2. ALWAYS ask ONE question at a time — never bundle
-3. ALWAYS show progress (e.g., "7/17") after each answer
+3. ALWAYS show progress (e.g., "7/18") after each answer
 4. ALWAYS store answers in SQL before moving to the next question
 5. NEVER skip the preview step — always show the profile before saving
 6. NEVER modify existing profiles without explicit user consent

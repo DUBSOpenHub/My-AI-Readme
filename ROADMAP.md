@@ -2,7 +2,7 @@
 
 ## ✅ Completed
 
-- [x] Core agent with 17-question guided profile builder
+- [x] Core agent with 18-question guided profile builder
 - [x] AI-powered prose generation from short answers
 - [x] Searchable profile card directory (GitHub Pages)
 - [x] Pause/resume via SQL progress tracking

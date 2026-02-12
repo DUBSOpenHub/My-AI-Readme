@@ -11,6 +11,7 @@ title: "Marcus Chen"
 |---|---|
 | **Name** | Marcus Chen |
 | **Role** | Staff Software Engineer |
+| **Business Unit** | Engineering |
 | **Team** | Infrastructure Team |
 | **Joined** | January 2020 |
 | **Email** | marcus.chen@company.com |
@@ -39,4 +40,4 @@ Context switching. If I'm deep in a problem and get pulled into an unrelated mee
 - **Fuel:** Cold brew, black, in a comically large thermos
 
 ---
-*Generated with [My AI README](https://github.com/DUBSOpenHub/MyAIReadme) 🤖*
+*Generated with [My AI README](https://github.com/DUBSOpenHub/My-AI-Readme) 🤖*

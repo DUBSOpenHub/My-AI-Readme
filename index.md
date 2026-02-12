@@ -108,7 +108,7 @@ layout: default
 <div class="quickstart">
   <h2>🚀 Get Started</h2>
   <ol>
-    <li>Clone this repo: <code>git clone https://github.com/DUBSOpenHub/MyAIReadme.git</code></li>
+    <li>Clone this repo: <code>git clone https://github.com/DUBSOpenHub/My-AI-Readme.git</code></li>
     <li>Open Copilot CLI inside the repo</li>
     <li>Type <code>@my-ai-readme</code> and follow the prompts</li>
   </ol>

@@ -36,4 +36,4 @@
 - **Fuel:** {{SNACK_DRINK}}
 
 ---
-*Generated with [My AI README](https://github.com/DUBSOpenHub/MyAIReadme) 🤖*
+*Generated with [My AI README](https://github.com/DUBSOpenHub/My-AI-Readme) 🤖*

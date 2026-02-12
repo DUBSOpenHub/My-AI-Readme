@@ -11,6 +11,7 @@ title: "Sofia Rivera"
 |---|---|
 | **Name** | Sofia Rivera |
 | **Role** | UX Designer |
+| **Business Unit** | Design |
 | **Team** | Growth Team |
 | **Joined** | March 2023 |
 | **Email** | sofia.rivera@company.com |
@@ -38,4 +39,4 @@ Unnecessary meetings where nothing gets decided. If there's no agenda and no out
 - **Fuel:** Iced matcha latte + a curated Spotify playlist (genre depends on the mood of the sprint)
 
 ---
-*Generated with [My AI README](https://github.com/DUBSOpenHub/MyAIReadme) 🤖*
+*Generated with [My AI README](https://github.com/DUBSOpenHub/My-AI-Readme) 🤖*

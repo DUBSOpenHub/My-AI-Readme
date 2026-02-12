@@ -11,6 +11,7 @@ title: "Gregg Cochran"
 |---|---|
 | **Name** | Gregg Cochran |
 | **Role** | Staff Program Manager |
+| **Business Unit** | DevRel |
 | **Team** | Open Source Programs Team |
 | **Email** | dubsopenhub@github.com |
 | **LinkedIn** | [linkedin.com/in/greggcochran](https://www.linkedin.com/in/greggcochran/) |
@@ -36,4 +37,4 @@ Context switching all day wears me down. When I'm bouncing between five differen
 - **Fuel:** Coffee, the bigger the mug the better
 
 ---
-*Generated with [My AI README](https://github.com/DUBSOpenHub/MyAIReadme) 🤖*
+*Generated with [My AI README](https://github.com/DUBSOpenHub/My-AI-Readme) 🤖*
