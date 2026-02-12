@@ -1,4 +1,4 @@
-# My AI README 🤖
+# 🤖 My AI README: How to Work With Me
 
 > **"How to Work With Me" — AI-powered team profiles, built in 3 minutes.**
 
@@ -36,7 +36,7 @@ That's it! The agent will guide you through everything. 🎉
 Your profile is saved to `profiles/your-name.md`. Commit and push to share it:
 ```bash
 git add profiles/
-git commit -m "Add my My AI README profile 🤖"
+git commit -m "Add my profile 🤖"
 git push
 ```
 
