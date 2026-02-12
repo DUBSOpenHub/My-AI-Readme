@@ -7,6 +7,7 @@
 |---|---|
 | **Name** | {{NAME}} |
 | **Role** | {{ROLE}} |
+| **Business Unit** | {{BUSINESS_UNIT}} |
 | **Team** | {{TEAM}} |
 {{#START_DATE}}| **Joined** | {{START_DATE}} |
 {{/START_DATE}}{{#EMAIL}}| **Email** | {{EMAIL}} |

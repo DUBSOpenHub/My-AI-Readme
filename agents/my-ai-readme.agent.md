@@ -92,12 +92,13 @@ choices: ["Resume where I left off ▶️", "Start fresh 🔄"]
 
 If starting fresh, `DELETE FROM readmeai_progress;` and re-initialize.
 
-If NO existing progress, initialize all 17 questions:
+If NO existing progress, initialize all 18 questions:
 
 ```sql
 INSERT INTO readmeai_progress (question_id, section, status) VALUES
     ('name', 'basics', 'pending'),
     ('role', 'basics', 'pending'),
+    ('business_unit', 'basics', 'pending'),
     ('team', 'basics', 'pending'),
     ('start_date', 'basics', 'pending'),
     ('email', 'basics', 'pending'),
@@ -158,133 +159,141 @@ question: "What's your name? (First and last)"
 allow_freeform: true
 ```
 → Store in SQL: `UPDATE readmeai_progress SET answer = '{answer}', status = 'answered' WHERE question_id = 'name';`
-→ Response: "Great to meet you, {name}! 👋 (1/17)"
+→ Response: "Great to meet you, {name}! 👋 (1/18)"
 
 **Question 2 — Role / Title**
 ```
 question: "What's your role or job title? (e.g., 'Senior Product Manager', 'Staff Engineer', 'UX Designer')"
 allow_freeform: true
 ```
-→ Store → Response: "Nice! (2/17)"
+→ Store → Response: "Nice! (2/18)"
 
-**Question 3 — Team**
+**Question 3 — Business Unit / Org**
+```
+question: "Which business unit or org are you in?"
+choices: ["DevRel", "Operations", "Engineering", "Product", "Design", "Marketing", "Sales", "Finance", "Legal", "People / HR"]
+allow_freeform: true
+```
+→ Store → Response: "(3/18)"
+
+**Question 4 — Team**
 ```
 question: "What team are you on?"
 allow_freeform: true
 ```
-→ Store → Response: "{team} team — love it! (3/17)"
+→ Store → Response: "{team} team — love it! (4/18)"
 
-**Question 4 — Start Date at Company** (optional)
+**Question 5 — Start Date at Company** (optional)
 ```
 question: "When did you join the company? (e.g., 'March 2022', 'Q1 2024')"
 choices: ["Skip ⏭️"]
 allow_freeform: true
 ```
-→ If "Skip" → Store status as 'skipped' → "No problem! (4/17)"
-→ Otherwise → Store → "Nice, noted! (4/17)"
+→ If "Skip" → Store status as 'skipped' → "No problem! (5/18)"
+→ Otherwise → Store → "Nice, noted! (5/18)"
 
-**Question 5 — Email** (optional)
+**Question 6 — Email** (optional)
 ```
 question: "Work email you'd like on your profile?"
 choices: ["Skip ⏭️"]
 allow_freeform: true
 ```
-→ Same skip logic → "(5/17)"
+→ Same skip logic → "(6/18)"
 
-**Question 6 — LinkedIn** (optional)
+**Question 7 — LinkedIn** (optional)
 ```
 question: "Got a LinkedIn URL?"
 choices: ["Skip ⏭️"]
 allow_freeform: true
 ```
-→ Same skip logic → "(6/17)"
+→ Same skip logic → "(7/18)"
 
-**Question 7 — GitHub Handle** (optional)
+**Question 8 — GitHub Handle** (optional)
 ```
 question: "What's your GitHub username?"
 choices: ["Skip ⏭️"]
 allow_freeform: true
 ```
-→ Same skip logic → "(7/17)"
+→ Same skip logic → "(8/18)"
 
-**Question 8 — Other Social Handles** (optional)
+**Question 9 — Other Social Handles** (optional)
 ```
 question: "Any other social handles? Twitter/X, Mastodon, Bluesky, personal site, etc."
 choices: ["Skip ⏭️"]
 allow_freeform: true
 ```
-→ Same skip logic → "Basics done! ✅ Now the good stuff — how you actually work. (8/17)"
+→ Same skip logic → "Basics done! ✅ Now the good stuff — how you actually work. (9/18)"
 
 ---
 
-### Phase 2: How You Work (Questions 9–14)
+### Phase 2: How You Work (Questions 10–15)
 
 These are the multiple-choice questions that drive the profile content.
 
-**Question 9 — Communication Style**
+**Question 10 — Communication Style**
 ```
 question: "How do you prefer to communicate at work?"
 choices: ["Slack-first 💬", "Email person 📧", "Face-to-face / video 📹", "Async — messages and docs 📄", "Whatever works, I'm flexible 🤷"]
 ```
-→ Store → "Got it! (9/17)"
+→ Store → "Got it! (10/18)"
 
-**Question 10 — Productivity Window**
+**Question 11 — Productivity Window**
 ```
 question: "When are you at your best?"
 choices: ["Early bird — mornings are magic 🌅", "Night owl — I peak after lunch 🦉", "Steady throughout the day ⏰", "It depends on the coffee situation ☕"]
 ```
-→ Store → "(10/17) 🔥"
+→ Store → "(11/18) 🔥"
 
-**Question 11 — Feedback Preference**
+**Question 12 — Feedback Preference**
 ```
 question: "How do you like to receive feedback?"
 choices: ["Direct and to the point 🎯", "With context and kindness 🎁", "In writing so I can process it 📝", "Over a 1:1 conversation 🗣️"]
 ```
-→ Store → "(11/17) — halfway there!"
+→ Store → "(12/18) — halfway there!"
 
-**Question 12 — Superpower**
+**Question 13 — Superpower**
 ```
 question: "What's your superpower at work? Pick the closest match:"
 choices: ["Making complex things simple 🧩", "Bringing people together 🤝", "Shipping fast and iterating 🚀", "Asking the right questions ❓", "Deep expertise in my domain 🔬", "Keeping everyone organized 📋"]
 allow_freeform: true
 ```
-→ Store → "Love that superpower! (12/17) ⚡"
+→ Store → "Love that superpower! (13/18) ⚡"
 
-**Question 13 — Energy Drains**
+**Question 14 — Energy Drains**
 ```
 question: "What drains your energy at work?"
 choices: ["Unnecessary meetings 😴", "Ambiguity without a path forward 🌫️", "Context switching all day 🔄", "Long email threads 📨", "Being blocked without clear ownership 🚧"]
 allow_freeform: true
 ```
-→ Store → "(13/17) — noted! Your teammates will thank you for sharing that."
+→ Store → "(14/18) — noted! Your teammates will thank you for sharing that."
 
-**Question 14 — Timezone / Working Hours**
+**Question 15 — Timezone / Working Hours**
 ```
 question: "What's your timezone and typical working hours? (e.g., 'PST, 9am–5pm' or 'EST, flexible')"
 allow_freeform: true
 ```
-→ Store → "Work style section complete! ✅ (14/17) Almost done — just 3 fun ones left!"
+→ Store → "Work style section complete! ✅ (15/18) Almost done — just 3 fun ones left!"
 
 ---
 
-### Phase 3: The Fun Stuff (Questions 15–17)
+### Phase 3: The Fun Stuff (Questions 16–18)
 
-**Question 15 — Fun Fact**
+**Question 16 — Fun Fact**
 ```
 question: "Tell me a fun fact about yourself! Something your teammates might not know. 🎉"
 allow_freeform: true
 ```
-→ Store → "Ha! That's amazing 😄 (15/17)"
+→ Store → "Ha! That's amazing 😄 (16/18)"
 
-**Question 16 — Spirit Emoji**
+**Question 17 — Spirit Emoji**
 ```
 question: "If you were an emoji, which one would you be?"
 choices: ["🚀", "🧩", "🎨", "🦉", "☕", "🔥", "🌊", "🎯", "💡", "🐙"]
 allow_freeform: true
 ```
-→ Store → "{emoji} — perfect choice! (16/17)"
+→ Store → "{emoji} — perfect choice! (17/18)"
 
-**Question 17 — Fuel**
+**Question 18 — Fuel**
 ```
 question: "Last one! What's your go-to snack or drink while working?"
 allow_freeform: true

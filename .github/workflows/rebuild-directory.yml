@@ -22,8 +22,8 @@ jobs:
           echo "" >> profiles/README.md
           echo "> Browse profiles to learn how your teammates work best." >> profiles/README.md
           echo "" >> profiles/README.md
-          echo "| Name | Role | Team | Profile |" >> profiles/README.md
-          echo "|------|------|------|---------|" >> profiles/README.md
+          echo "| Name | Role | Business Unit | Team | Profile |" >> profiles/README.md
+          echo "|------|------|---------------|------|---------|" >> profiles/README.md
 
           # Start building index.md (keep everything before the card-grid div content)
           cat > /tmp/index_header.html << 'HEADER_EOF'
@@ -75,6 +75,7 @@ jobs:
             [ -z "$name" ] && name=$(grep -m1 "^# " "$file" | sed 's/^# 🤖 My AI README: //')
 
             role=$(grep -m1 "| \*\*Role\*\*" "$file" | sed 's/.*| \*\*Role\*\* | \(.*\) |/\1/')
+            business_unit=$(grep -m1 "| \*\*Business Unit\*\*" "$file" | sed 's/.*| \*\*Business Unit\*\* | \(.*\) |/\1/')
             team=$(grep -m1 "| \*\*Team\*\*" "$file" | sed 's/.*| \*\*Team\*\* | \(.*\) |/\1/')
             joined=$(grep -m1 "| \*\*Joined\*\*" "$file" | sed 's/.*| \*\*Joined\*\* | \(.*\) |/\1/')
             emoji=$(grep -m1 "\*\*Spirit emoji:\*\*" "$file" | sed 's/.*\*\*Spirit emoji:\*\* //')
@@ -86,6 +87,7 @@ jobs:
             sanitize() { echo "$1" | sed 's/<[^>]*>//g; s/"/\&quot;/g; s/'"'"'/\&#39;/g'; }
             name=$(sanitize "$name")
             role=$(sanitize "$role")
+            business_unit=$(sanitize "$business_unit")
             team=$(sanitize "$team")
             joined=$(sanitize "$joined")
             emoji=$(sanitize "$emoji")
@@ -94,7 +96,7 @@ jobs:
             github_handle=$(grep -m1 "| \*\*GitHub\*\*" "$file" | sed 's/.*\[@\([^]]*\)\].*/\1/')
 
             # Add to README.md table
-            echo "| ${name} | ${role} | ${team} | [View Profile](${basename}.md) |" >> profiles/README.md
+            echo "| ${name} | ${role} | ${business_unit} | ${team} | [View Profile](${basename}.md) |" >> profiles/README.md
 
             # Build card HTML
             joined_html=""
@@ -103,17 +105,21 @@ jobs:
             avatar_html=""
             [ -n "$github_handle" ] && avatar_html="<img src=\"https://github.com/${github_handle}.png?size=80\" alt=\"${name}\" style=\"width:48px;height:48px;border-radius:50%;margin-bottom:8px;\">"
 
+            bu_html=""
+            [ -n "$business_unit" ] && bu_html="<span class=\"card-bu\">${business_unit}</span> · "
+
             name_lower=$(echo "$name" | tr '[:upper:]' '[:lower:]')
             role_lower=$(echo "$role" | tr '[:upper:]' '[:lower:]')
             team_lower=$(echo "$team" | tr '[:upper:]' '[:lower:]')
+            bu_lower=$(echo "$business_unit" | tr '[:upper:]' '[:lower:]')
 
             CARDS="${CARDS}
-            <a href=\"${basename}\" class=\"profile-card\" data-name=\"${name_lower}\" data-role=\"${role_lower}\" data-team=\"${team_lower}\">
+            <a href=\"${basename}\" class=\"profile-card\" data-name=\"${name_lower}\" data-role=\"${role_lower}\" data-team=\"${team_lower}\" data-bu=\"${bu_lower}\">
               ${avatar_html}
               <div class=\"card-emoji\">${emoji}</div>
               <p class=\"card-name\">${name}</p>
               <p class=\"card-role\">${role}</p>
-              <span class=\"card-team\">${team}</span>
+              ${bu_html}<span class=\"card-team\">${team}</span>
               ${joined_html}
             </a>"
           done
@@ -157,7 +163,7 @@ jobs:
               var visible = 0;
               var hidden = 0;
               cards.forEach(function(card) {
-                var text = card.dataset.name + ' ' + card.dataset.role + ' ' + card.dataset.team;
+                var text = card.dataset.name + ' ' + card.dataset.role + ' ' + card.dataset.team + ' ' + (card.dataset.bu || '');
                 var match = !q || text.indexOf(q) !== -1;
                 if (match) {
                   visible++;

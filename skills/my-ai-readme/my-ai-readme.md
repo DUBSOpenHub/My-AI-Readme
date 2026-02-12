@@ -115,21 +115,22 @@ Always end with:
 |---|-----|---------|------|----------|
 | 1 | name | basics | freeform | ✅ |
 | 2 | role | basics | freeform | ✅ |
-| 3 | team | basics | freeform | ✅ |
-| 4 | start_date | basics | freeform | ❌ |
-| 5 | email | basics | freeform | ❌ |
-| 6 | linkedin | basics | freeform | ❌ |
-| 7 | github_handle | basics | freeform | ❌ |
-| 8 | social_handles | basics | freeform | ❌ |
-| 9 | communication | work_style | choice | ✅ |
-| 10 | productivity | work_style | choice | ✅ |
-| 11 | feedback | work_style | choice | ✅ |
-| 12 | superpower | work_style | choice+free | ✅ |
-| 13 | drains | work_style | choice+free | ✅ |
-| 14 | timezone | work_style | freeform | ✅ |
-| 15 | fun_fact | fun | freeform | ✅ |
-| 16 | spirit_emoji | fun | choice+free | ✅ |
-| 17 | snack_drink | fun | freeform | ✅ |
+| 3 | business_unit | basics | choice+free | ✅ |
+| 4 | team | basics | freeform | ✅ |
+| 5 | start_date | basics | freeform | ❌ |
+| 6 | email | basics | freeform | ❌ |
+| 7 | linkedin | basics | freeform | ❌ |
+| 8 | github_handle | basics | freeform | ❌ |
+| 9 | social_handles | basics | freeform | ❌ |
+| 10 | communication | work_style | choice | ✅ |
+| 11 | productivity | work_style | choice | ✅ |
+| 12 | feedback | work_style | choice | ✅ |
+| 13 | superpower | work_style | choice+free | ✅ |
+| 14 | drains | work_style | choice+free | ✅ |
+| 15 | timezone | work_style | freeform | ✅ |
+| 16 | fun_fact | fun | freeform | ✅ |
+| 17 | spirit_emoji | fun | choice+free | ✅ |
+| 18 | snack_drink | fun | freeform | ✅ |
 
 ---
 
