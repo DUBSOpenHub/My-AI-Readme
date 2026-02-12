@@ -78,6 +78,8 @@ layout: default
   <h1>🤖 README.ai</h1>
   <p class="tagline">"How to Work With Me" — AI-powered team profiles, built in 3 minutes.</p>
   <a href="profiles/" class="cta-button">Browse Team Directory →</a>
+  <br><br>
+  <a href="build/" class="cta-button" style="background:#1a7f37;">Try the Web Builder (Demo) →</a>
 </div>
 
 <div class="features">

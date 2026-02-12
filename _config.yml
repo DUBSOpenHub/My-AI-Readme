@@ -6,6 +6,7 @@ permalink: pretty
 
 header_pages:
   - profiles/index.md
+  - build.md
   - ONBOARDING.md
 
 defaults:
