@@ -33,36 +33,36 @@ layout: default
 
 <div class="card-grid" id="cardGrid">
 
-  <a href="gregg-cochran" class="profile-card" data-name="gregg cochran" data-role="staff program manager" data-team="open source programs team">
+  <a href="gregg-cochran" class="profile-card" data-name="gregg cochran" data-role="staff program manager" data-team="open source programs team" data-bu="devrel">
     
     <div class="card-emoji">☕</div>
     <p class="card-name">Gregg Cochran</p>
     <p class="card-role">Staff Program Manager</p>
-    <span class="card-team">Open Source Programs Team</span>
+    <span class="card-bu">DevRel</span> · <span class="card-team">Open Source Programs Team</span>
     
   </a>
-  <a href="jane-doe" class="profile-card" data-name="jane doe" data-role="senior product manager" data-team="platform team">
+  <a href="jane-doe" class="profile-card" data-name="jane doe" data-role="senior product manager" data-team="platform team" data-bu="product">
     <img src="https://github.com/janedoe.png?size=80" alt="Jane Doe" style="width:48px;height:48px;border-radius:50%;margin-bottom:8px;">
     <div class="card-emoji">🧩</div>
     <p class="card-name">Jane Doe</p>
     <p class="card-role">Senior Product Manager</p>
-    <span class="card-team">Platform Team</span>
+    <span class="card-bu">Product</span> · <span class="card-team">Platform Team</span>
     <p class="card-joined">Joined June 2021</p>
   </a>
-  <a href="marcus-chen" class="profile-card" data-name="marcus chen" data-role="staff software engineer" data-team="infrastructure team">
+  <a href="marcus-chen" class="profile-card" data-name="marcus chen" data-role="staff software engineer" data-team="infrastructure team" data-bu="engineering">
     <img src="https://github.com/marcuschen.png?size=80" alt="Marcus Chen" style="width:48px;height:48px;border-radius:50%;margin-bottom:8px;">
     <div class="card-emoji">🦉</div>
     <p class="card-name">Marcus Chen</p>
     <p class="card-role">Staff Software Engineer</p>
-    <span class="card-team">Infrastructure Team</span>
+    <span class="card-bu">Engineering</span> · <span class="card-team">Infrastructure Team</span>
     <p class="card-joined">Joined January 2020</p>
   </a>
-  <a href="sofia-rivera" class="profile-card" data-name="sofia rivera" data-role="ux designer" data-team="growth team">
+  <a href="sofia-rivera" class="profile-card" data-name="sofia rivera" data-role="ux designer" data-team="growth team" data-bu="design">
     
     <div class="card-emoji">🎨</div>
     <p class="card-name">Sofia Rivera</p>
     <p class="card-role">UX Designer</p>
-    <span class="card-team">Growth Team</span>
+    <span class="card-bu">Design</span> · <span class="card-team">Growth Team</span>
     <p class="card-joined">Joined March 2023</p>
   </a>
 
@@ -93,7 +93,7 @@ layout: default
     var visible = 0;
     var hidden = 0;
     cards.forEach(function(card) {
-      var text = card.dataset.name + ' ' + card.dataset.role + ' ' + card.dataset.team;
+      var text = card.dataset.name + ' ' + card.dataset.role + ' ' + card.dataset.team + ' ' + (card.dataset.bu || '');
       var match = !q || text.indexOf(q) !== -1;
       if (match) {
         visible++;
