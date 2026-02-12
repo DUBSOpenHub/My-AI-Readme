@@ -266,6 +266,7 @@ layout: default
   var questions = [
     { id:'name', section:'basics', badge:'The Basics', type:'text', q:"What's your name?", hint:'First and last name', required:true },
     { id:'role', section:'basics', badge:'The Basics', type:'text', q:"What's your role or job title?", hint:'e.g., Senior Product Manager, Staff Engineer', required:true },
+    { id:'business_unit', section:'basics', badge:'The Basics', type:'choice', q:"Which business unit or org are you in?", choices:["DevRel","Operations","Engineering","Product","Design","Marketing","Sales","Finance","Legal","People / HR"], required:true },
     { id:'team', section:'basics', badge:'The Basics', type:'text', q:"What team are you on?", hint:'e.g., Platform, Growth, Infrastructure', required:true },
     { id:'start_date', section:'basics', badge:'The Basics', type:'text', q:"When did you join the company?", hint:'e.g., March 2022, Q1 2024', required:false },
     { id:'email', section:'basics', badge:'The Basics', type:'text', q:"Work email for your profile?", hint:'e.g., you@company.com', required:false },
@@ -426,6 +427,7 @@ layout: default
     var rows = '';
     if (a.name) rows += '<tr><td><b>Name</b></td><td>' + a.name + '</td></tr>';
     if (a.role) rows += '<tr><td><b>Role</b></td><td>' + a.role + '</td></tr>';
+    if (a.business_unit) rows += '<tr><td><b>Business Unit</b></td><td>' + a.business_unit + '</td></tr>';
     if (a.team) rows += '<tr><td><b>Team</b></td><td>' + a.team + '</td></tr>';
     if (a.start_date) rows += '<tr><td><b>Joined</b></td><td>' + a.start_date + '</td></tr>';
     if (a.email) rows += '<tr><td><b>Email</b></td><td>' + a.email + '</td></tr>';

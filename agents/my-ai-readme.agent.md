@@ -149,7 +149,7 @@ choices: ["Let's go! 🚀", "Show me an example first 👀", "What is this? 🤔
 
 ---
 
-### Phase 1: The Basics (Questions 1–8)
+### Phase 1: The Basics (Questions 1–9)
 
 Ask each question ONE AT A TIME using `ask_user`. After each answer, store it in SQL and give brief positive feedback before moving to the next.
 

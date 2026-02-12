@@ -86,7 +86,7 @@ layout: default
   <div class="feature-card">
     <div class="icon">⚡</div>
     <h3>3 Minutes</h3>
-    <p>17 quick questions — mostly multiple-choice. The AI writes the rest.</p>
+    <p>18 quick questions — mostly multiple-choice. The AI writes the rest.</p>
   </div>
   <div class="feature-card">
     <div class="icon">🤖</div>

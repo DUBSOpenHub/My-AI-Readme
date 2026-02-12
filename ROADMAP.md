@@ -7,18 +7,19 @@
 - [x] Searchable profile card directory (GitHub Pages)
 - [x] Pause/resume via SQL progress tracking
 - [x] Skip buttons for optional fields
-- [x] 3 example profiles
+- [x] 4 example profiles
 - [x] Onboarding guide for CLI newcomers
 - [x] GitHub Action for auto-rebuilding directory index
+- [x] Profile update flow — edit existing profiles via the agent
+- [x] Input validation for LinkedIn URLs
+- [x] `gh` CLI extension for zero-clone onboarding
 
 ## 🔜 Next Up
 
 - [ ] **GitHub avatar integration** — pull profile photos from GitHub handle for richer cards
 - [ ] **Team dropdown filter** — filter directory cards by team name
 - [ ] **Auto-detect from git config** — pre-fill name and email from `git config`
-- [ ] **Profile update flow** — structured way to edit existing profiles without re-answering everything
 - [ ] **Filename collision handling** — append suffix for duplicate names (e.g., `john-smith-2.md`)
-- [ ] **Input validation** — validate email format, LinkedIn URL pattern
 
 ## 🔮 Future Ideas
 
