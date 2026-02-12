@@ -33,6 +33,14 @@ layout: default
 
 <div class="card-grid" id="cardGrid">
 
+  <a href="gregg-cochran" class="profile-card" data-name="gregg cochran" data-role="staff program manager" data-team="open source programs team">
+    
+    <div class="card-emoji">☕</div>
+    <p class="card-name">Gregg Cochran</p>
+    <p class="card-role">Staff Program Manager</p>
+    <span class="card-team">Open Source Programs Team</span>
+    
+  </a>
   <a href="jane-doe" class="profile-card" data-name="jane doe" data-role="senior product manager" data-team="platform team">
     <img src="https://github.com/janedoe.png?size=80" alt="Jane Doe" style="width:48px;height:48px;border-radius:50%;margin-bottom:8px;">
     <div class="card-emoji">🧩</div>
@@ -50,6 +58,7 @@ layout: default
     <p class="card-joined">Joined January 2020</p>
   </a>
   <a href="sofia-rivera" class="profile-card" data-name="sofia rivera" data-role="ux designer" data-team="growth team">
+    
     <div class="card-emoji">🎨</div>
     <p class="card-name">Sofia Rivera</p>
     <p class="card-role">UX Designer</p>
@@ -76,19 +85,46 @@ layout: default
   var noResults = document.getElementById('noResults');
   var countEl = document.getElementById('searchCount');
   var total = cards.length;
+  var PAGE_SIZE = 50;
+  var showAll = false;
+
   function update() {
     var q = search.value.toLowerCase().trim();
     var visible = 0;
+    var hidden = 0;
     cards.forEach(function(card) {
       var text = card.dataset.name + ' ' + card.dataset.role + ' ' + card.dataset.team;
       var match = !q || text.indexOf(q) !== -1;
-      card.style.display = match ? '' : 'none';
-      if (match) visible++;
+      if (match) {
+        visible++;
+        // Paginate: only show first PAGE_SIZE unless searching or showAll
+        card.style.display = (q || showAll || visible <= PAGE_SIZE) ? '' : 'none';
+        if (!q && !showAll && visible > PAGE_SIZE) hidden++;
+      } else {
+        card.style.display = 'none';
+      }
     });
     noResults.classList.toggle('visible', visible === 0);
-    countEl.textContent = q ? visible + ' of ' + total + ' profiles' : total + ' profiles';
+    var msg = q ? visible + ' of ' + total + ' profiles' : total + ' profiles';
+    if (!q && !showAll && hidden > 0) msg += ' (showing first ' + PAGE_SIZE + ')';
+    countEl.textContent = msg;
+
+    // Show/hide "Show All" button
+    var btn = document.getElementById('showAllBtn');
+    if (!q && !showAll && hidden > 0) {
+      if (!btn) {
+        btn = document.createElement('button');
+        btn.id = 'showAllBtn';
+        btn.textContent = 'Show all ' + total + ' profiles';
+        btn.style.cssText = 'margin:16px auto;display:block;padding:10px 24px;border:1px solid #d0d7de;border-radius:8px;background:#fff;cursor:pointer;font-size:14px;';
+        btn.onclick = function() { showAll = true; update(); };
+        grid.parentNode.insertBefore(btn, grid.nextSibling);
+      }
+    } else if (btn) {
+      btn.remove();
+    }
   }
-  search.addEventListener('input', update);
+  search.addEventListener('input', function() { showAll = false; update(); });
   update();
 })();
 </script>
