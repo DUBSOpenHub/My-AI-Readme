@@ -1,4 +1,4 @@
-# 🤖 README.ai Team Directory
+# 🤖 My AI README Team Directory
 
 > Browse profiles to learn how your teammates work best.
 
@@ -11,4 +11,4 @@
 
 ---
 
-*This directory is auto-generated. Run `@readme-ai` to add yours!*
+*This directory is auto-generated. Run `@my-ai-readme` to add yours!*

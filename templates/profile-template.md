@@ -1,4 +1,4 @@
-# 🤖 README.ai: {{NAME}}
+# 🤖 My AI README: {{NAME}}
 
 > *{{ROLE}} · {{TEAM}} · {{SPIRIT_EMOJI}} {{SNACK_DRINK}}*
 
@@ -35,4 +35,4 @@
 - **Fuel:** {{SNACK_DRINK}}
 
 ---
-*Generated with [README.ai](https://github.com/DUBSOpenHub/readme-ai) 🤖*
+*Generated with [My AI README](https://github.com/DUBSOpenHub/MyAIReadme) 🤖*

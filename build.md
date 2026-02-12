@@ -235,7 +235,7 @@ layout: default
 <div class="builder-container">
 
   <div class="builder-header">
-    <h1>🤖 README.ai</h1>
+    <h1>🤖 My AI README</h1>
     <p class="subtitle">Build your "How to Work With Me" profile</p>
   </div>
 
@@ -320,7 +320,7 @@ layout: default
     area.innerHTML =
       '<div class="question-card">' +
         '<div class="confetti">🤖</div>' +
-        '<h2 style="text-align:center">Welcome to README.ai!</h2>' +
+        '<h2 style="text-align:center">Welcome to My AI README!</h2>' +
         '<p style="text-align:center;color:#656d76;margin-bottom:24px;">' +
           "I'll help you build your \"How to Work With Me\" profile.<br>" +
           '<b>⏱️ ~3 minutes</b> · <b>✅ Mostly multiple-choice</b> · <b>✍️ AI writes the polished version</b>' +
@@ -338,7 +338,7 @@ layout: default
     area.innerHTML =
       '<div class="preview-card">' +
         '<div class="avatar-circle">🧩</div>' +
-        '<h3 style="text-align:center">README.ai: Jane Doe</h3>' +
+        '<h3 style="text-align:center">My AI README: Jane Doe</h3>' +
         '<p style="text-align:center;color:#656d76;font-style:italic">Senior Product Manager · Platform Team</p>' +
         '<table>' +
           '<tr><td>📧</td><td>jane.doe@company.com</td></tr>' +
@@ -437,7 +437,7 @@ layout: default
     area.innerHTML =
       '<div class="preview-card">' +
         '<div style="text-align:center">' + avatar + '</div>' +
-        '<h3 style="text-align:center;margin-top:8px">🤖 README.ai: ' + (a.name || 'You') + '</h3>' +
+        '<h3 style="text-align:center;margin-top:8px">🤖 My AI README: ' + (a.name || 'You') + '</h3>' +
         '<p style="text-align:center;color:#656d76;font-style:italic">' +
           (a.role || '') + ' · ' + (a.team || '') + ' · ' + (a.spirit_emoji || '') + ' ' + (a.snack_drink || '') +
         '</p>' +
@@ -468,14 +468,14 @@ layout: default
     area.innerHTML =
       '<div class="celebration-card">' +
         '<div class="confetti">🎉🎉🎉</div>' +
-        '<h2>Your README.ai profile is live!</h2>' +
+        '<h2>Your My AI README profile is live!</h2>' +
         '<p>📄 Saved to: <code>profiles/' + slug + '.md</code></p>' +
         '<p>📚 Added to the team directory</p>' +
         '<br>' +
         '<p>🤝 Share this with your team and tell them to build theirs!</p>' +
         '<a href="../profiles/" class="profile-link">Browse Team Directory →</a>' +
         '<p style="margin-top:24px;font-size:13px;color:#656d76">' +
-          'This is a mockup. In the real experience, run <code>@readme-ai</code> in Copilot CLI!' +
+          'This is a mockup. In the real experience, run <code>@my-ai-readme</code> in Copilot CLI!' +
         '</p>' +
       '</div>';
   };

@@ -1,13 +1,13 @@
-# README.ai Skill — Profile Generation Reference
+# My AI README Skill — Profile Generation Reference
 
-This skill provides the README.ai agent with reference material for generating high-quality profiles.
+This skill provides the My AI README agent with reference material for generating high-quality profiles.
 
 ---
 
 ## Profile Sections Reference
 
 ### Section 1: Header
-**Format:** `# 🤖 README.ai: {Full Name}`
+**Format:** `# 🤖 My AI README: {Full Name}`
 **Subheader:** `> *{Role} · {Team} · {Spirit Emoji} {Snack/Drink detail}*`
 
 The subheader should be a single italicized line that captures role, team, and a personality hint. Use the spirit emoji and snack/drink to add flavor.
@@ -104,7 +104,7 @@ This is the most valuable section for teammates — it tells them what to avoid.
 Always end with:
 ```markdown
 ---
-*Generated with [README.ai](https://github.com/DUBSOpenHub/readme-ai) 🤖*
+*Generated with [My AI README](https://github.com/DUBSOpenHub/MyAIReadme) 🤖*
 ```
 
 ---

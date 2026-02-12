@@ -2,7 +2,7 @@
 title: "Gregg Cochran"
 ---
 
-# 🤖 README.ai: Gregg Cochran
+# 🤖 My AI README: Gregg Cochran
 
 > *Staff Program Manager · Open Source Programs Team · ☕ Fueled by great coffee*
 
@@ -36,4 +36,4 @@ Context switching all day wears me down. When I'm bouncing between five differen
 - **Fuel:** Coffee, the bigger the mug the better
 
 ---
-*Generated with [README.ai](https://github.com/DUBSOpenHub/readme-ai) 🤖*
+*Generated with [My AI README](https://github.com/DUBSOpenHub/MyAIReadme) 🤖*

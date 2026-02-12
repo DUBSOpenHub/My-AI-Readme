@@ -1,5 +1,5 @@
 ---
-title: README.ai
+title: My AI README
 layout: default
 ---
 
@@ -75,7 +75,7 @@ layout: default
 </style>
 
 <div class="hero">
-  <h1>🤖 README.ai</h1>
+  <h1>🤖 My AI README</h1>
   <p class="tagline">"How to Work With Me" — AI-powered team profiles, built in 3 minutes.</p>
   <a href="profiles/" class="cta-button">Browse Team Directory →</a>
   <br><br>
@@ -96,7 +96,7 @@ layout: default
   <div class="feature-card">
     <div class="icon">💬</div>
     <h3>Copilot CLI</h3>
-    <p>Built as a Copilot CLI agent. Just type <code>@readme-ai</code> to start.</p>
+    <p>Built as a Copilot CLI agent. Just type <code>@my-ai-readme</code> to start.</p>
   </div>
   <div class="feature-card">
     <div class="icon">📚</div>
@@ -108,9 +108,9 @@ layout: default
 <div class="quickstart">
   <h2>🚀 Get Started</h2>
   <ol>
-    <li>Clone this repo: <code>git clone https://github.com/DUBSOpenHub/readme-ai.git</code></li>
+    <li>Clone this repo: <code>git clone https://github.com/DUBSOpenHub/MyAIReadme.git</code></li>
     <li>Open Copilot CLI inside the repo</li>
-    <li>Type <code>@readme-ai</code> and follow the prompts</li>
+    <li>Type <code>@my-ai-readme</code> and follow the prompts</li>
   </ol>
   <p>Never used Copilot CLI? Check out the <a href="ONBOARDING">Onboarding Guide</a>.</p>
 </div>

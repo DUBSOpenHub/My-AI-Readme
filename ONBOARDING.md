@@ -1,6 +1,6 @@
-# 🤖 README.ai Onboarding — Your First 5 Minutes
+# 🤖 My AI README Onboarding — Your First 5 Minutes
 
-Never used GitHub Copilot CLI? No problem. This guide gets you from zero to your first README.ai profile.
+Never used GitHub Copilot CLI? No problem. This guide gets you from zero to your first My AI README profile.
 
 ---
 
@@ -25,8 +25,8 @@ gh auth login
 ## Step 2: Clone This Repo
 
 ```bash
-git clone https://github.com/DUBSOpenHub/readme-ai.git
-cd readme-ai
+git clone https://github.com/DUBSOpenHub/MyAIReadme.git
+cd MyAIReadme
 ```
 
 ## Step 3: Launch Copilot CLI
@@ -44,7 +44,7 @@ Or if you use the VS Code terminal, Copilot CLI is already available — just ty
 Type this in Copilot CLI:
 
 ```
-@readme-ai
+@my-ai-readme
 ```
 
 The agent takes over from here. It will:
@@ -62,7 +62,7 @@ After your profile is saved, share it with your team:
 
 ```bash
 git add profiles/
-git commit -m "Add my README.ai profile 🤖"
+git commit -m "Add my My AI README profile 🤖"
 git push
 ```
 
@@ -77,11 +77,11 @@ git push
 → Run `gh auth login` and follow the prompts
 
 **"I accidentally closed the terminal mid-profile"**
-→ No worries! Run `@readme-ai` again — the agent can detect if you have a partial profile and resume where you left off.
+→ No worries! Run `@my-ai-readme` again — the agent can detect if you have a partial profile and resume where you left off.
 
 **"I want to edit my profile after saving"**
-→ Run `@readme-ai` again — it will find your existing profile and let you update it.
+→ Run `@my-ai-readme` again — it will find your existing profile and let you update it.
 
 ---
 
-That's it! Welcome to README.ai 🎉
+That's it! Welcome to My AI README 🎉

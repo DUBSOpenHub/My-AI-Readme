@@ -4,7 +4,7 @@
 
 If you discover a security vulnerability in this repository, please report it through **GitHub's private vulnerability reporting**.
 
-1. Navigate to the [**Security** tab](https://github.com/DUBSOpenHub/readme-ai/security) of this repository
+1. Navigate to the [**Security** tab](https://github.com/DUBSOpenHub/MyAIReadme/security) of this repository
 2. Click **"Report a vulnerability"**
 3. Fill out the advisory form with details about the issue
 

@@ -23,7 +23,7 @@ layout: default
 .cta-banner code { background: #fff; padding: 2px 8px; border-radius: 6px; font-weight: 600; }
 </style>
 
-<h1>🤖 README.ai Team Directory</h1>
+<h1>🤖 My AI README Team Directory</h1>
 <p><em>Browse profiles to learn how your teammates work best.</em></p>
 
 <div class="search-container">
@@ -74,7 +74,7 @@ layout: default
 </div>
 
 <div class="cta-banner">
-  🤖 Don't see yourself? Run <code>@readme-ai</code> in Copilot CLI to create your profile!
+  🤖 Don't see yourself? Run <code>@my-ai-readme</code> in Copilot CLI to create your profile!
 </div>
 
 <script>

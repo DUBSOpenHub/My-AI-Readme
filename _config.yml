@@ -1,7 +1,7 @@
-title: README.ai 🤖
+title: My AI README 🤖
 description: "How to Work With Me" — AI-powered team profiles
 theme: minima
-baseurl: "/readme-ai"
+baseurl: "/MyAIReadme"
 permalink: pretty
 
 header_pages:
