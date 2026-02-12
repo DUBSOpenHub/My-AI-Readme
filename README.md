@@ -1,8 +1,8 @@
-# 🤖 My AI README: How to Work With Me
+# 🤖 My AI Readme: How to Work With Me
 
 > **"How to Work With Me" — AI-powered team profiles, built in 3 minutes.**
 
-My AI README is a GitHub Copilot CLI agent that helps every team member create a polished "How to Work With Me" profile through a fun, guided conversation. No writing skills required — just answer a few questions and the AI does the rest.
+My AI Readme is a GitHub Copilot CLI agent that helps every team member create a polished "How to Work With Me" profile through a fun, guided conversation. No writing skills required — just answer a few questions and the AI does the rest.
 
 ## ✨ What You Get
 
