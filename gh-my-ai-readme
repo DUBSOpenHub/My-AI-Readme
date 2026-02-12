@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+# gh-my-ai-readme — A GitHub CLI extension for My AI README
+# Installs prerequisites, clones the repo, and launches the profile builder.
+
+set -euo pipefail
+
+REPO_URL="https://github.com/DUBSOpenHub/My-AI-Readme.git"
+LOCAL_DIR="$HOME/.my-ai-readme"
+BOLD='\033[1m'
+DIM='\033[2m'
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+YELLOW='\033[0;33m'
+RESET='\033[0m'
+
+header() {
+  echo ""
+  echo -e "${BOLD}🤖 My AI README: How to Work With Me${RESET}"
+  echo -e "${DIM}Build your team profile in 3 minutes — powered by GitHub Copilot CLI${RESET}"
+  echo ""
+}
+
+step() {
+  echo -e "${CYAN}▶${RESET} $1"
+}
+
+success() {
+  echo -e "${GREEN}✓${RESET} $1"
+}
+
+warn() {
+  echo -e "${YELLOW}⚠${RESET} $1"
+}
+
+# --- Preflight checks ---
+
+header
+
+# 1. Ensure gh copilot extension is installed
+if ! gh extension list 2>/dev/null | grep -q "gh-copilot"; then
+  step "Installing GitHub Copilot CLI extension..."
+  gh extension install github/gh-copilot
+  success "Copilot CLI installed"
+else
+  success "Copilot CLI is ready"
+fi
+
+# 2. Clone or update the repo
+if [ -d "$LOCAL_DIR/.git" ]; then
+  step "Updating My AI README repo..."
+  git -C "$LOCAL_DIR" pull --quiet 2>/dev/null || warn "Could not update — using cached version"
+  success "Repo is up to date"
+else
+  step "Setting up My AI README..."
+  git clone --quiet "$REPO_URL" "$LOCAL_DIR"
+  success "Repo cloned to $LOCAL_DIR"
+fi
+
+# 3. Launch Copilot CLI in the repo directory
+echo ""
+echo -e "${BOLD}Launching Copilot CLI...${RESET}"
+echo -e "Type ${BOLD}@my-ai-readme${RESET} to start building your profile! 🎉"
+echo -e "${DIM}(Type 'exit' when you're done)${RESET}"
+echo ""
+
+cd "$LOCAL_DIR"
+ghcs

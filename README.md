@@ -16,25 +16,24 @@ A beautiful Markdown profile that tells your teammates:
 ## 🚀 Quickstart (2 minutes)
 
 ### Prerequisites
-- [GitHub Copilot CLI](https://docs.github.com/en/copilot/github-copilot-in-the-cli) installed and authenticated
+- [GitHub CLI (`gh`)](https://cli.github.com/) installed and authenticated (`gh auth login`)
 
-### Step 1: Clone this repo
+### Step 1: Install the extension
 ```bash
-git clone https://github.com/DUBSOpenHub/MyAIReadme.git
-cd MyAIReadme
+gh extension install DUBSOpenHub/My-AI-Readme
 ```
 
 ### Step 2: Build your profile
-Open GitHub Copilot CLI and invoke the My AI README agent:
-```
-@my-ai-readme
+```bash
+gh my-ai-readme
 ```
 
-That's it! The agent will guide you through everything. 🎉
+That's it! The extension handles everything — installs Copilot CLI if needed, sets up the repo, and launches the profile builder. Just type `@my-ai-readme` when prompted. 🎉
 
 ### Step 3: Share with your team
-Your profile is saved to `profiles/your-name.md`. Commit and push to share it:
+The agent saves your profile and walks you through committing. Or do it manually:
 ```bash
+cd ~/.my-ai-readme
 git add profiles/
 git commit -m "Add my profile 🤖"
 git push
