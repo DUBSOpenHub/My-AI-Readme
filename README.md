@@ -84,3 +84,11 @@ Want to set this up for your company?
 ## 🤝 Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+---
+
+## 🐙 Built with Love
+
+Made with 💜 by DUBSOpenHub.
+
+Let's build! 🚀✨
