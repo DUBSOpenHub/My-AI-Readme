@@ -26,15 +26,6 @@ layout: default
 <h1>🤖 My AI README Team Directory</h1>
 <p><em>Browse profiles to learn how your teammates work best.</em></p>
 
-<div class="filter-bar" style="margin: 1rem 0; display: flex; flex-wrap: wrap; gap: 8px;">
-  <button class="filter-btn active" data-filter="all" onclick="filterCards('all', this)" style="padding: 6px 14px; border: 1px solid #d0d7de; border-radius: 20px; background: #0969da; color: #fff; cursor: pointer; font-size: 13px;">All</button>
-  <button class="filter-btn" data-filter="the-architect" onclick="filterCards('the-architect', this)" style="padding: 6px 14px; border: 1px solid #d0d7de; border-radius: 20px; background: #fff; cursor: pointer; font-size: 13px;">🏗️ Architect</button>
-  <button class="filter-btn" data-filter="the-connector" onclick="filterCards('the-connector', this)" style="padding: 6px 14px; border: 1px solid #d0d7de; border-radius: 20px; background: #fff; cursor: pointer; font-size: 13px;">🤝 Connector</button>
-  <button class="filter-btn" data-filter="the-shipper" onclick="filterCards('the-shipper', this)" style="padding: 6px 14px; border: 1px solid #d0d7de; border-radius: 20px; background: #fff; cursor: pointer; font-size: 13px;">🚀 Shipper</button>
-  <button class="filter-btn" data-filter="the-questioner" onclick="filterCards('the-questioner', this)" style="padding: 6px 14px; border: 1px solid #d0d7de; border-radius: 20px; background: #fff; cursor: pointer; font-size: 13px;">❓ Questioner</button>
-  <button class="filter-btn" data-filter="the-sage" onclick="filterCards('the-sage', this)" style="padding: 6px 14px; border: 1px solid #d0d7de; border-radius: 20px; background: #fff; cursor: pointer; font-size: 13px;">🔬 Sage</button>
-</div>
-
 <div class="search-container">
   <input type="text" class="search-input" id="profileSearch" placeholder="Search by name, role, or team..." autocomplete="off" aria-label="Search profiles">
   <div class="search-count" id="searchCount" aria-live="polite"></div>
@@ -42,24 +33,38 @@ layout: default
 
 <div class="card-grid" id="cardGrid">
 
-{% assign profiles = site.pages | where_exp: "p", "p.path contains 'profiles/' and p.name != 'index.md' and p.name != 'README.md'" %}
-{% for p in profiles %}
-<a href="{{ p.url | relative_url }}" class="profile-card"
-   data-name="{{ p.name | downcase }}"
-   data-role="{{ p.role | downcase }}"
-   data-team="{{ p.team | downcase }}"
-   data-bu="{{ p.business_unit | downcase }}"
-   data-archetype="{{ p.archetype | downcase | replace: ' ', '-' }}">
-  {% if p.github and p.github != "" %}<img src="https://github.com/{{ p.github }}.png?size=80" alt="{{ p.title }}" style="width:48px;height:48px;border-radius:50%;margin-bottom:8px;">{% endif %}
-  <div class="card-emoji">{{ p.spirit_emoji | default: "🤖" }}</div>
-  <span class="card-badge" title="{{ p.completeness_level }} profile">{{ p.completeness_badge }}</span>
-  <p class="card-name">{{ p.title }}</p>
-  <p class="card-role">{{ p.role }}</p>
-  <span class="card-team">{{ p.team }}</span>
-  {% if p.archetype %}<span class="card-archetype" style="display:inline-block;font-size:11px;padding:2px 8px;border-radius:12px;background:#f0f0f0;color:#555;margin-left:6px;">{{ p.archetype }}</span>{% endif %}
-  {% if p.start_date %}<p class="card-joined">Joined {{ p.start_date }}</p>{% endif %}
-</a>
-{% endfor %}
+  <a href="gregg-cochran" class="profile-card" data-name="gregg cochran" data-role="staff program manager" data-team="open source programs team" data-bu="devrel">
+    
+    <div class="card-emoji">☕</div>
+    <p class="card-name">Gregg Cochran</p>
+    <p class="card-role">Staff Program Manager</p>
+    <span class="card-bu">DevRel</span> · <span class="card-team">Open Source Programs Team</span>
+    
+  </a>
+  <a href="jane-doe" class="profile-card" data-name="jane doe" data-role="senior product manager" data-team="platform team" data-bu="product">
+    <img src="https://github.com/janedoe.png?size=80" alt="Jane Doe" style="width:48px;height:48px;border-radius:50%;margin-bottom:8px;">
+    <div class="card-emoji">🧩</div>
+    <p class="card-name">Jane Doe</p>
+    <p class="card-role">Senior Product Manager</p>
+    <span class="card-bu">Product</span> · <span class="card-team">Platform Team</span>
+    <p class="card-joined">Joined June 2021</p>
+  </a>
+  <a href="marcus-chen" class="profile-card" data-name="marcus chen" data-role="staff software engineer" data-team="infrastructure team" data-bu="engineering">
+    <img src="https://github.com/marcuschen.png?size=80" alt="Marcus Chen" style="width:48px;height:48px;border-radius:50%;margin-bottom:8px;">
+    <div class="card-emoji">🦉</div>
+    <p class="card-name">Marcus Chen</p>
+    <p class="card-role">Staff Software Engineer</p>
+    <span class="card-bu">Engineering</span> · <span class="card-team">Infrastructure Team</span>
+    <p class="card-joined">Joined January 2020</p>
+  </a>
+  <a href="sofia-rivera" class="profile-card" data-name="sofia rivera" data-role="ux designer" data-team="growth team" data-bu="design">
+    
+    <div class="card-emoji">🎨</div>
+    <p class="card-name">Sofia Rivera</p>
+    <p class="card-role">UX Designer</p>
+    <span class="card-bu">Design</span> · <span class="card-team">Growth Team</span>
+    <p class="card-joined">Joined March 2023</p>
+  </a>
 
 </div>
 
@@ -73,18 +78,6 @@ layout: default
 </div>
 
 <script>
-var currentFilter = 'all';
-function filterCards(archetype, btn) {
-  currentFilter = archetype;
-  document.querySelectorAll('.filter-btn').forEach(function(b) {
-    b.style.background = '#fff';
-    b.style.color = '#1f2328';
-  });
-  btn.style.background = '#0969da';
-  btn.style.color = '#fff';
-  update();
-}
-
 (function() {
   var search = document.getElementById('profileSearch');
   var grid = document.getElementById('cardGrid');
@@ -92,25 +85,46 @@ function filterCards(archetype, btn) {
   var noResults = document.getElementById('noResults');
   var countEl = document.getElementById('searchCount');
   var total = cards.length;
+  var PAGE_SIZE = 50;
+  var showAll = false;
 
-  window.update = function() {
+  function update() {
     var q = search.value.toLowerCase().trim();
     var visible = 0;
+    var hidden = 0;
     cards.forEach(function(card) {
-      var text = (card.dataset.name || '') + ' ' + (card.dataset.role || '') + ' ' + (card.dataset.team || '') + ' ' + (card.dataset.bu || '');
-      var matchText = !q || text.indexOf(q) !== -1;
-      var matchArch = currentFilter === 'all' || card.dataset.archetype === currentFilter;
-      if (matchText && matchArch) {
+      var text = card.dataset.name + ' ' + card.dataset.role + ' ' + card.dataset.team + ' ' + (card.dataset.bu || '');
+      var match = !q || text.indexOf(q) !== -1;
+      if (match) {
         visible++;
-        card.style.display = '';
+        // Paginate: only show first PAGE_SIZE unless searching or showAll
+        card.style.display = (q || showAll || visible <= PAGE_SIZE) ? '' : 'none';
+        if (!q && !showAll && visible > PAGE_SIZE) hidden++;
       } else {
         card.style.display = 'none';
       }
     });
     noResults.classList.toggle('visible', visible === 0);
-    countEl.textContent = visible + ' of ' + total + ' profiles';
-  };
-  search.addEventListener('input', function() { update(); });
+    var msg = q ? visible + ' of ' + total + ' profiles' : total + ' profiles';
+    if (!q && !showAll && hidden > 0) msg += ' (showing first ' + PAGE_SIZE + ')';
+    countEl.textContent = msg;
+
+    // Show/hide "Show All" button
+    var btn = document.getElementById('showAllBtn');
+    if (!q && !showAll && hidden > 0) {
+      if (!btn) {
+        btn = document.createElement('button');
+        btn.id = 'showAllBtn';
+        btn.textContent = 'Show all ' + total + ' profiles';
+        btn.style.cssText = 'margin:16px auto;display:block;padding:10px 24px;border:1px solid #d0d7de;border-radius:8px;background:#fff;cursor:pointer;font-size:14px;';
+        btn.onclick = function() { showAll = true; update(); };
+        grid.parentNode.insertBefore(btn, grid.nextSibling);
+      }
+    } else if (btn) {
+      btn.remove();
+    }
+  }
+  search.addEventListener('input', function() { showAll = false; update(); });
   update();
 })();
 </script>
