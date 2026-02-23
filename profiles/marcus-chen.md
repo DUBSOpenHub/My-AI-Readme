@@ -1,5 +1,29 @@
 ---
 title: "Marcus Chen"
+name: Marcus Chen
+role: Staff Software Engineer
+business_unit: Engineering
+team: Infrastructure Team
+pronouns: ""
+timezone: "EST (11am–7pm)"
+start_date: "January 2020"
+email: marcus.chen@company.com
+linkedin: https://linkedin.com/in/marcuschen
+github: marcuschen
+spirit_emoji: "🦉"
+snack_drink: "Cold brew, black, in a comically large thermos"
+fun_fact: "I built a mechanical keyboard from scratch and it's louder than my opinions in code review"
+communication_style: "Async-first"
+productivity_window: "Night owl"
+feedback_preference: "In writing"
+superpower: "Asking the right questions"
+energy_drain: "Context switching"
+archetype: "The Questioner"
+completeness_score: 100
+completeness_level: "Legend"
+completeness_badge: "🏆"
+version: 1
+tags: [engineering, infrastructure, backend]
 ---
 
 # 🤖 My AI README: Marcus Chen

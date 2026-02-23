@@ -1,5 +1,29 @@
 ---
 title: "Jane Doe"
+name: Jane Doe
+role: Senior Product Manager
+business_unit: Product
+team: Platform Team
+pronouns: ""
+timezone: "PST (10am–6pm)"
+start_date: "June 2021"
+email: jane.doe@company.com
+linkedin: https://linkedin.com/in/janedoe
+github: janedoe
+spirit_emoji: "🧩"
+snack_drink: "Oat milk latte, no exceptions"
+fun_fact: "I once gave a keynote in a language I don't speak"
+communication_style: "Slack-first"
+productivity_window: "Early bird"
+feedback_preference: "Direct"
+superpower: "Making complex things simple"
+energy_drain: "Ambiguity without a path forward"
+archetype: "The Architect"
+completeness_score: 100
+completeness_level: "Legend"
+completeness_badge: "🏆"
+version: 1
+tags: [product-management, platform, strategy]
 ---
 
 # 🤖 My AI README: Jane Doe

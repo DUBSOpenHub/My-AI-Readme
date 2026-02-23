@@ -1,5 +1,29 @@
 ---
 title: "Sofia Rivera"
+name: Sofia Rivera
+role: UX Designer
+business_unit: Design
+team: Growth Team
+pronouns: ""
+timezone: "CST (9am–5pm)"
+start_date: "March 2023"
+email: sofia.rivera@company.com
+linkedin: https://linkedin.com/in/sofiarivera
+github: ""
+spirit_emoji: "🎨"
+snack_drink: "Iced matcha latte + a curated Spotify playlist"
+fun_fact: "I've visited 23 countries and I have a travel sketchbook for each one"
+communication_style: "Face-to-face"
+productivity_window: "Steady throughout the day"
+feedback_preference: "With context"
+superpower: "Bringing people together"
+energy_drain: "Unnecessary meetings without decisions"
+archetype: "The Connector"
+completeness_score: 100
+completeness_level: "Legend"
+completeness_badge: "🏆"
+version: 1
+tags: [design, ux, growth]
 ---
 
 # 🤖 My AI README: Sofia Rivera

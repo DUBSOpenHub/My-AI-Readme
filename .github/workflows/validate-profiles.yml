@@ -1,0 +1,24 @@
+name: Validate Profiles
+on:
+  pull_request:
+    paths: ['profiles/**']
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install pyyaml
+      - run: python scripts/validate_profiles.py
+      - if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { execSync } = require('child_process');
+            const output = execSync('python scripts/validate_profiles.py 2>&1 || true').toString();
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## 🤖 Profile Validation\n\n\`\`\`\n${output}\n\`\`\`\n\nPlease fix the issues above before merging.`
+            });

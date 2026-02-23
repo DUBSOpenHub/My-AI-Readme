@@ -1,3 +1,30 @@
+---
+title: "{{NAME}}"
+name: {{NAME}}
+role: {{ROLE}}
+business_unit: {{BUSINESS_UNIT}}
+team: {{TEAM}}
+pronouns: ""
+timezone: "{{TIMEZONE}}"
+email: {{EMAIL}}
+linkedin: {{LINKEDIN}}
+github: {{GITHUB}}
+spirit_emoji: "{{SPIRIT_EMOJI}}"
+snack_drink: "{{SNACK_DRINK}}"
+fun_fact: "{{FUN_FACT}}"
+communication_style: "{{COMMUNICATION_STYLE}}"
+productivity_window: "{{PRODUCTIVITY_WINDOW}}"
+feedback_preference: "{{FEEDBACK_PREFERENCE}}"
+superpower: "{{SUPERPOWER}}"
+energy_drain: "{{ENERGY_DRAIN}}"
+archetype: "{{ARCHETYPE}}"
+completeness_score: {{COMPLETENESS_SCORE}}
+completeness_level: "{{COMPLETENESS_LEVEL}}"
+completeness_badge: "{{COMPLETENESS_BADGE}}"
+version: 1
+tags: []
+---
+
 # 🤖 My AI README: {{NAME}}
 
 > *{{ROLE}} · {{TEAM}} · {{SPIRIT_EMOJI}} {{SNACK_DRINK}}*

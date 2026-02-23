@@ -1,0 +1,49 @@
+{
+  "name": "my-ai-readme",
+  "version": "1.0.0",
+  "description": "AI-powered 'How to Work With Me' team profiles — build yours in 3 minutes",
+  "profiles_dir": "profiles/",
+  "template": "templates/profile-template.md",
+  "capabilities": {
+    "tools": ["ask_user", "view", "create", "edit", "grep", "glob", "sql"],
+    "reads": ["profiles/*.md", "templates/*.md", "archetypes.md"],
+    "writes": ["profiles/*.md"]
+  },
+  "intents": [
+    {
+      "id": "build-profile",
+      "trigger_phrases": ["start", "build my profile", "create profile", "let's go"],
+      "input": { "type": "interactive", "questions": 18 },
+      "output": { "type": "file", "path_pattern": "profiles/{name}.md" }
+    },
+    {
+      "id": "lightning-mode",
+      "trigger_phrases": ["quick", "fast", "lightning", "express", "just the basics"],
+      "input": { "type": "interactive", "questions": 6 },
+      "output": { "type": "file", "path_pattern": "profiles/{name}.md" }
+    },
+    {
+      "id": "update-profile",
+      "trigger_phrases": ["update my profile", "edit my profile"],
+      "input": { "type": "interactive" },
+      "output": { "type": "file_edit" }
+    },
+    {
+      "id": "browse-profiles",
+      "trigger_phrases": ["browse", "show profiles", "team directory"],
+      "output": { "type": "text" }
+    },
+    {
+      "id": "compare-profiles",
+      "trigger_phrases": ["compare", "compatibility", "who works like me", "how do we work together"],
+      "input": { "profiles": ["name1", "name2"] },
+      "output": { "type": "text", "format": "compatibility_report" }
+    },
+    {
+      "id": "icebreaker",
+      "trigger_phrases": ["icebreaker", "conversation starter", "ice breaker for"],
+      "input": { "profiles": ["name1", "name2"] },
+      "output": { "type": "text" }
+    }
+  ]
+}

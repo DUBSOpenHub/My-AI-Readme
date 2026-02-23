@@ -1,5 +1,28 @@
 ---
 title: "Gregg Cochran"
+name: Gregg Cochran
+role: Staff Program Manager
+business_unit: DevRel
+team: Open Source Programs Team
+pronouns: ""
+timezone: "PST (8:30am–5pm)"
+email: dubsopenhub@github.com
+linkedin: https://www.linkedin.com/in/greggcochran/
+github: ""
+spirit_emoji: "☕"
+snack_drink: "Coffee, the bigger the mug the better"
+fun_fact: "I enjoy great coffee — and yes, I will have opinions about your beans"
+communication_style: "Slack-first"
+productivity_window: "Early bird"
+feedback_preference: "In writing"
+superpower: "Making complex things simple"
+energy_drain: "Context switching"
+archetype: "The Architect"
+completeness_score: 83
+completeness_level: "Pro"
+completeness_badge: "⭐"
+version: 1
+tags: [program-management, open-source, devrel]
 ---
 
 # 🤖 My AI README: Gregg Cochran
