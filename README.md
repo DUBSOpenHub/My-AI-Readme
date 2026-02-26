@@ -4,6 +4,11 @@
 
 My AI README is a GitHub Copilot CLI agent that helps every team member create a polished "How to Work With Me" profile through a fun, guided conversation. No writing skills required — just answer a few questions and the AI does the rest.
 
+> ⚡ **Get started fast!** Copy this right into the [Copilot CLI](https://github.com/github/copilot-cli):
+> ```
+> /skills add DUBSOpenHub/My-AI-Readme
+> ```
+
 ## ✨ What You Get
 
 A beautiful Markdown profile that tells your teammates:
